@@ -3,4 +3,5 @@ export let theme = {
   bgc: "#141414",
   lgc: "#B5B7B8",
   wc: "#fff",
+  dc: "#000000",
 };

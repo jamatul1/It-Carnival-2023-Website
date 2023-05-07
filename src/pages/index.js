@@ -6,10 +6,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <h1>Hello From the Index Page</h1>
-      <p>
-        loremi disffjdl fsklkjkdjflksjkdjfkd
-        jdkfjdlskjlkjsddddddddddddddddddddddddddddddddsjksdjfk
-      </p>
+      <p>loremi disffjdl fsklkjkdjflksjkdjfkd</p>
     </Layout>
   );
 };
