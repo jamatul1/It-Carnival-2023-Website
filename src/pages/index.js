@@ -1,8 +1,17 @@
 import * as React from "react";
 import styled from "styled-components";
+import Layout from "../components/layout";
 
 const IndexPage = () => {
-  return <main>hello it carnival 2023</main>;
+  return (
+    <Layout>
+      <h1>Hello From the Index Page</h1>
+      <p>
+        loremi disffjdl fsklkjkdjflksjkdjfkd
+        jdkfjdlskjlkjsddddddddddddddddddddddddddddddddsjksdjfk
+      </p>
+    </Layout>
+  );
 };
 
 export default IndexPage;

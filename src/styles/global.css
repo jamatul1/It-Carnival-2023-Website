@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141414;
+  color: #fff;
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.7;
+  font-size: 1.6rem;
+}
