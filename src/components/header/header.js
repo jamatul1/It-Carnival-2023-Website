@@ -2,11 +2,18 @@ import React from "react";
 import { styled } from "styled-components";
 import Nav from "../nav/nav";
 
-const Element = styled.header`
-  background-color: ${(p) => p.theme.bgc};
+const Element = styled.header``;
+const Wrapper = styled.div`
+  height: 7rem;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
-const Wrapper = styled.div``;
-const Logo = styled.div``;
+const Logo = styled.div`
+  font-weight: 400;
+`;
 const RegiBtn = styled.button``;
 
 export default function Header() {
