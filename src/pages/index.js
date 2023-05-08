@@ -1,12 +1,26 @@
 import * as React from "react";
-import styled from "styled-components";
+
 import Layout from "../components/layout";
+
+import Showcase from "../components/landingPage/showcase";
+import Description from "../components/landingPage/description";
+import Events from "../components/landingPage/events/events";
+import Schedule from "../components/schedule/schedule";
 
 const IndexPage = () => {
   return (
     <Layout>
-      <h1>Hello From the Index Page</h1>
-      <p>loremi disffjdl fsklkjkdjflksjkdjfkd</p>
+      <Showcase />
+      <Description />
+      <Events />
+      <Schedule
+        schedules={[
+          { title: "IUPC", time: "11 AM" },
+          { title: "IUPC", time: "11 AM" },
+          { title: "IUPC", time: "11 AM" },
+          { title: "IUPC", time: "11 AM" },
+        ]}
+      />
     </Layout>
   );
 };

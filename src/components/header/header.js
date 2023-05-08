@@ -52,9 +52,9 @@ export default function Header() {
         <NavWrapper>
           <Nav />
         </NavWrapper>
-        <RegiBtn>
-          <FeatherIcon size={16} icon="clipboard" /> Register
-        </RegiBtn>
+        {/* <RegiBtn>
+          <FeatherIcon size={16} icon="clipboard" /> Registration
+        </RegiBtn> */}
       </Wrapper>
     </Element>
   );

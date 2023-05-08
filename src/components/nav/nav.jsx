@@ -8,7 +8,7 @@ import { fCenter } from "../../utils/queryHelpers";
 const Element = styled.nav``;
 const List = styled.ul`
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   list-style: none;
 `;
 const Item = styled.li``;
