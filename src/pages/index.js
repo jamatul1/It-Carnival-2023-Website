@@ -6,6 +6,7 @@ import Showcase from "../components/landingPage/showcase";
 import Description from "../components/landingPage/description";
 import Events from "../components/landingPage/events/events";
 import Schedule from "../components/schedule/schedule";
+import Sponsors from "../components/landingPage/sponsors/sponsors";
 
 const IndexPage = () => {
   return (
@@ -13,6 +14,7 @@ const IndexPage = () => {
       <Showcase />
       <Description />
       <Events />
+      <Sponsors />
       <Schedule
         schedules={[
           { title: "IUPC", time: "11 AM" },

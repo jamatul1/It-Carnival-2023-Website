@@ -6,7 +6,7 @@
 }
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .cards:hover > .card::after {
@@ -78,8 +78,6 @@
 
 /* -- ↓ ↓ ↓ extra card content styles ↓ ↓ ↓ -- */
 
-h1,
-h2,
 h3,
 h4,
 span {
@@ -152,12 +150,30 @@ i {
 .card-info-title > h3 {
   font-size: 1.3em;
   line-height: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 25%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  background-size: 300%;
+  background-position: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .card-info-title > h4 {
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.85em;
   margin-top: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 25%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  background-size: 300%;
+  background-position: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* -- ↓ ↓ ↓ some responsiveness ↓ ↓ ↓ -- */

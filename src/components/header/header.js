@@ -6,7 +6,9 @@ import Nav from "../nav/nav";
 import { at } from "../../utils/queryHelpers";
 
 const Element = styled.header`
-  width: 100vw;
+  width: 100%;
+  position: relative;
+  z-index: 100000;
 `;
 const Wrapper = styled.div`
   height: 7rem;

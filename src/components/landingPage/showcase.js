@@ -4,6 +4,7 @@ import MagicalText from "../magicalText/magicalText";
 import FireWorks from "../firework/firework";
 import ParticleText from "../particleText/particleText";
 import { at } from "../../utils/queryHelpers";
+import ScrollDownLogo from "../scrollDownLogo/scrollDownLogo";
 
 const FireworkWrapper = styled.div`
   position: absolute;
@@ -16,11 +17,12 @@ const MagicalTextWrapper = styled.div`
   transform: translate(100%, -50%);
 `;
 const Element = styled.div`
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
+  margin-bottom: 5rem;
   height: 100vh;
-  weight: 100vw;
+  width: 100%;
 `;
 
 const ParticlesWrapper = styled.div`
@@ -31,7 +33,6 @@ const ParticlesWrapper = styled.div`
 `;
 
 const Subtitle = styled.h4`
-  width: 100%;
   text-align: center;
   font-size: 2rem;
   word-spacing: 0.5rem;
@@ -39,17 +40,28 @@ const Subtitle = styled.h4`
   position: absolute;
   line-height: 1.2;
   top: 40%;
-  ${at(825, `top: 35%;`)}
-  ${at(572, `top: 28%;`)}
+  ${at(825, `top: 38%; font-size: 1.8rem;`)}
+  ${at(572, `top: 35%; font-size: 1.6rem;`)}
  
   left: 50%;
   transform: translate(-50%, -50%);
-  bold {
+  .bold {
     font-weight: bold;
+    color: ${(p) => p.theme.wc};
   }
   span {
     color: ${(p) => p.theme.pc};
   }
+`;
+
+const ScrollDownWrapper = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 export default function Showcase() {
   return (
@@ -59,9 +71,14 @@ export default function Showcase() {
       </FireworkWrapper>
       <ParticlesWrapper>
         <Subtitle>
-          Welcome to the <bold>PSTU CSE CLUB</bold> <span>Presents</span>{" "}
+          Welcome to the <span className="bold">PSTU CSE CLUB</span>{" "}
+          <span>Presents</span>{" "}
         </Subtitle>
         <ParticleText />
+
+        <ScrollDownWrapper>
+          <ScrollDownLogo />
+        </ScrollDownWrapper>
       </ParticlesWrapper>
     </Element>
   );

@@ -15,4 +15,5 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.7;
   font-size: 1.6rem;
+  overflow-x: hidden;
 }

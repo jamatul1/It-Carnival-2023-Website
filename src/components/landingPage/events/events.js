@@ -1,6 +1,17 @@
 import React, { useEffect, useRef } from "react";
 import * as styles from "./style.module.css";
 import { HeadingSecondary } from "../../global/typography";
+import { useInView } from "react-intersection-observer";
+import EventCard from "./eventCard";
+
+const revealVariant = {
+  initial: {
+    backgroundPosition: "100%",
+  },
+  animate: {
+    backgroundPosition: "0%",
+  },
+};
 function configCards(container, items) {
   container.onmousemove = (e) => {
     console.log(items);
@@ -23,6 +34,8 @@ export default function Events() {
   let card5Ref = useRef();
   let card6Ref = useRef();
 
+  const { ref: visiRef, inView } = useInView({});
+
   useEffect(() => {
     configCards(cardsRef.current, [
       card1Ref.current,
@@ -35,135 +48,25 @@ export default function Events() {
   }, []);
   return (
     <div className={styles.events}>
-      <HeadingSecondary>All The Events Under It Carnival 2023</HeadingSecondary>
+      <HeadingSecondary
+        ref={visiRef}
+        variants={revealVariant}
+        initial="initial"
+        animate={inView ? "animate" : "initial"}
+        transition={{
+          duration: 0.8,
+          ease: "linear",
+        }}
+      >
+        All The Events Under It Carnival 2023
+      </HeadingSecondary>
       <div ref={cardsRef} className={styles.cards}>
-        <div ref={card1Ref} className={styles.card}>
-          <div className={styles.cardContent}>
-            <div className={styles.cardImage}>
-              <img
-                src="https://thumbs.dreamstime.com/z/event-management-vector-illustration-tiny-planning-process-person-concept-flat-persons-festive-seminar-party-other-social-164875364.jpg"
-                alt="card_img"
-              />
-            </div>
-            <div className={styles.cardInfoWrapper}>
-              <div className={styles.cardInfo}>
-                <div className={styles.cardInfoTitle}>
-                  <h3>Hackathon</h3>
-                  <h4>Places to be apart. Wait, what?</h4>
-                </div>
-                <button className={styles.cardInfoBtn}>
-                  Read More <span>&gt;</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div ref={card2Ref} className={styles.card}>
-          <div className={styles.cardContent}>
-            <div className={styles.cardImage}>
-              <img
-                src="https://thumbs.dreamstime.com/z/event-management-vector-illustration-tiny-planning-process-person-concept-flat-persons-festive-seminar-party-other-social-164875364.jpg"
-                alt="card_img"
-              />
-            </div>
-            <div className={styles.cardInfoWrapper}>
-              <div className={styles.cardInfo}>
-                <div className={styles.cardInfoTitle}>
-                  <h3>Hackathon</h3>
-                  <h4>Places to be apart. Wait, what?</h4>
-                </div>
-                <button className={styles.cardInfoBtn}>
-                  Read More <span>&gt;</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div ref={card3Ref} className={styles.card}>
-          <div className={styles.cardContent}>
-            <div className={styles.cardImage}>
-              <img
-                src="https://thumbs.dreamstime.com/z/event-management-vector-illustration-tiny-planning-process-person-concept-flat-persons-festive-seminar-party-other-social-164875364.jpg"
-                alt="card_img"
-              />
-            </div>
-            <div className={styles.cardInfoWrapper}>
-              <div className={styles.cardInfo}>
-                <div className={styles.cardInfoTitle}>
-                  <h3>Hackathon</h3>
-                  <h4>Places to be apart. Wait, what?</h4>
-                </div>
-                <button className={styles.cardInfoBtn}>
-                  Read More <span>&gt;</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div ref={card4Ref} className={styles.card}>
-          <div className={styles.cardContent}>
-            <div className={styles.cardImage}>
-              <img
-                src="https://thumbs.dreamstime.com/z/event-management-vector-illustration-tiny-planning-process-person-concept-flat-persons-festive-seminar-party-other-social-164875364.jpg"
-                alt="card_img"
-              />
-            </div>
-            <div className={styles.cardInfoWrapper}>
-              <div className={styles.cardInfo}>
-                <div className={styles.cardInfoTitle}>
-                  <h3>Hackathon</h3>
-                  <h4>Places to be apart. Wait, what?</h4>
-                </div>
-                <button className={styles.cardInfoBtn}>
-                  Read More <span>&gt;</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div ref={card5Ref} className={styles.card}>
-          <div className={styles.cardContent}>
-            <div className={styles.cardImage}>
-              <img
-                src="https://thumbs.dreamstime.com/z/event-management-vector-illustration-tiny-planning-process-person-concept-flat-persons-festive-seminar-party-other-social-164875364.jpg"
-                alt="card_img"
-              />
-            </div>
-            <div className={styles.cardInfoWrapper}>
-              <div className={styles.cardInfo}>
-                <div className={styles.cardInfoTitle}>
-                  <h3>Hackathon</h3>
-                  <h4>Places to be apart. Wait, what?</h4>
-                </div>
-                <button className={styles.cardInfoBtn}>
-                  Read More <span>&gt;</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div ref={card6Ref} className={styles.card}>
-          <div className={styles.cardContent}>
-            <div className={styles.cardImage}>
-              <img
-                src="https://thumbs.dreamstime.com/z/event-management-vector-illustration-tiny-planning-process-person-concept-flat-persons-festive-seminar-party-other-social-164875364.jpg"
-                alt="card_img"
-              />
-            </div>
-            <div className={styles.cardInfoWrapper}>
-              <div className={styles.cardInfo}>
-                <div className={styles.cardInfoTitle}>
-                  <h3>Hackathon</h3>
-                  <h4>Places to be apart. Wait, what?</h4>
-                </div>
-                <button className={styles.cardInfoBtn}>
-                  Read More <span>&gt;</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <EventCard ref={card1Ref} />
+        <EventCard ref={card2Ref} />
+        <EventCard ref={card3Ref} />
+        <EventCard ref={card4Ref} />
+        <EventCard ref={card5Ref} />
+        <EventCard ref={card6Ref} />
       </div>
     </div>
   );

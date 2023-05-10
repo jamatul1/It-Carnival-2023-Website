@@ -56,6 +56,10 @@ export function initAll(canvas) {
   };
 
   const attachEventListeners = () => {
+    window.addEventListener("resize", (e) => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
     // listen to the mousemove event and
     // set the mouse positions to the correct coordinates
     canvas.addEventListener("mousemove", (e) => {

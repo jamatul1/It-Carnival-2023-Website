@@ -37,6 +37,7 @@ export function startCanvas(canvas, text = "It Carnival 2023") {
         this.vx += this.force * Math.cos(this.angle);
         this.vy += this.force * Math.sin(this.angle);
       }
+
       this.x +=
         (this.vx *= this.friction) + (this.originX - this.x) * this.ease;
       this.y +=
@@ -51,14 +52,14 @@ export function startCanvas(canvas, text = "It Carnival 2023") {
       this.canvasHeight = canvasHeight;
       this.textX = this.canvasWidth / 2;
       this.textY = this.canvasHeight / 2;
-      this.fontSize = 96;
+      this.fontSize = 62;
       this.lineHeight = this.fontSize * 0.8;
       this.maxTextWidth = this.canvasWidth * 0.8;
       this.textVerticleOffset = 1;
 
       // particle Text
       this.particles = [];
-      this.gap = 3;
+      this.gap = 2;
       this.mouse = {
         radius: 20000,
         x: 0,
@@ -149,6 +150,14 @@ export function startCanvas(canvas, text = "It Carnival 2023") {
         particle.draw();
       });
     }
+
+    resize(width, height) {
+      this.canvasWidth = width;
+      this.canvasHeight = height;
+      this.textX = this.canvasWidth / 2;
+      this.textY = this.canvasHeight / 2;
+      this.maxTextWidth = this.canvasWidth * 0.8;
+    }
   }
 
   const effect = new Effect(ctx, canvas.width, canvas.height);
@@ -160,4 +169,10 @@ export function startCanvas(canvas, text = "It Carnival 2023") {
     requestAnimationFrame(animate);
   }
   animate();
+  window.addEventListener("resize", (e) => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    effect.resize(canvas.width, canvas.height);
+    effect.wrapText(text);
+  });
 }
