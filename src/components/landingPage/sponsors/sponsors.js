@@ -4,6 +4,7 @@ import { HeadingSecondary } from "../../global/typography";
 import SponsorCard from "./sponsorCard";
 import { textRevealVariant } from "../../animation/textReveal";
 import { useInView } from "react-intersection-observer";
+import ObjectReveal from "../../animation/objectReveal";
 
 const Element = styled.section`
   padding: 10rem 0;
@@ -31,9 +32,15 @@ export default function Sponsors() {
         It carnivals Sponsors
       </HeadingSecondary>
       <SponsorsWrapper>
-        <SponsorCard />
-        <SponsorCard />
-        <SponsorCard />
+        <ObjectReveal>
+          <SponsorCard />
+        </ObjectReveal>
+        <ObjectReveal>
+          <SponsorCard />
+        </ObjectReveal>
+        <ObjectReveal>
+          <SponsorCard />
+        </ObjectReveal>
       </SponsorsWrapper>
     </Element>
   );
