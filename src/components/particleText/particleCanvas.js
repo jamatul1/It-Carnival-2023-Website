@@ -79,8 +79,8 @@ export function startCanvas(canvas, text = "It Carnival 2023") {
         this.canvasHeight
       );
       gradient.addColorStop(0.3, "#fff");
-      // gradient.addColorStop(0.5, "fuchsia");
-      // gradient.addColorStop(0.7, "purple");
+      gradient.addColorStop(0.5, "fuchsia");
+      gradient.addColorStop(0.7, "purple");
       this.context.fillStyle = gradient;
       this.context.textAlign = "center";
       this.context.textBaseline = "middle";
