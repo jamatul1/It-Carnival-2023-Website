@@ -5,6 +5,7 @@ import FireWorks from "../firework/firework";
 import ParticleText from "../particleText/particleText";
 import { at } from "../../utils/queryHelpers";
 import ScrollDownLogo from "../scrollDownLogo/scrollDownLogo";
+import { motion } from "framer-motion";
 
 const FireworkWrapper = styled.div`
   position: absolute;
@@ -20,7 +21,7 @@ const Element = styled.div`
   position: relative;
   top: 0;
   left: 0;
-  margin-bottom: 5rem;
+
   height: 100vh;
   width: 100%;
   background: #fc466b; /* fallback for old browsers */
@@ -39,13 +40,14 @@ const ParticlesWrapper = styled.div`
   z-index: -100;
 `;
 
-const Subtitle = styled.h4`
+const Subtitle = styled(motion.h4)`
   text-align: center;
   font-size: 2rem;
   word-spacing: 0.5rem;
   letter-spacing: 1.2px;
   position: absolute;
   line-height: 1.2;
+  color: #f4f4f4;
   top: 40%;
   ${at(825, `top: 38%; font-size: 1.8rem;`)}
   ${at(572, `top: 30%; font-size: 1.6rem;`)}
@@ -77,7 +79,15 @@ export default function Showcase() {
         <FireWorks />
       </FireworkWrapper>
       <ParticlesWrapper>
-        <Subtitle>
+        <Subtitle
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.5,
+            ease: "easeIn",
+          }}
+        >
           Welcome to the <span className="bold">PSTU CSE CLUB</span>{" "}
           <span>Presents</span>{" "}
         </Subtitle>

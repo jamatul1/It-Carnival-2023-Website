@@ -115,7 +115,7 @@ export function initAll(canvas) {
       if (fireworks.length < 10) {
         fireworks.push(new Firework());
       }
-      console.log(fireworks.length);
+
       mouseClicked = false;
     }
     let fireworkIndex = fireworks.length;
@@ -145,7 +145,9 @@ export function initAll(canvas) {
     loop();
   }
 
-  startFireWork();
+  setTimeout(() => {
+    startFireWork();
+  }, 1000);
   // classes
   class Firework {
     constructor() {

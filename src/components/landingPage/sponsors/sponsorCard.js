@@ -15,10 +15,10 @@ const Card = styled.div`
   align-items: center;
   cursor: pointer;
   gap: 1rem;
-  border: 1px solid ${(p) => p.theme.bc};
 `;
 const Logo = styled.img`
   height: 8rem;
+  border-radius: 0.5rem;
 `;
 const SponsorName = styled(motion.h6)`
   font-size: 1.6rem;

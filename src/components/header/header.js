@@ -5,8 +5,9 @@ import FeatherIcon from "feather-icons-react";
 import Nav from "../nav/nav";
 import { at } from "../../utils/queryHelpers";
 import { Button } from "../btn/btn";
+import { motion } from "framer-motion";
 
-const Element = styled.header`
+const Element = styled(motion.header)`
   width: 100%;
   position: fixed;
   top: 0;
@@ -27,6 +28,7 @@ const Wrapper = styled.div`
 `;
 const Logo = styled.div`
   font-weight: 700;
+  color: white;
   ${at(800, `flex-grow:1;`)};
 `;
 
@@ -54,9 +56,26 @@ const RegiBtn = styled.button`
 const BtnWrapper = styled.div`
   flex: 1;
 `;
+
+const headerVariant = {
+  initial: {
+    y: -100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.8,
+      duration: 0.5,
+      delayChildren: 0.3,
+      ease: "easeIn",
+    },
+  },
+};
 export default function Header() {
   return (
-    <Element>
+    <Element variants={headerVariant} initial={"initial"} animate={"animate"}>
       <Wrapper>
         <Logo>Logo here</Logo>
         <NavWrapper>

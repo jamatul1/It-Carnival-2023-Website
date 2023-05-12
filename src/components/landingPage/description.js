@@ -12,17 +12,17 @@ const revealVariant = {
 };
 const Element = styled.div`
   width: 80%;
-  margin: auto;
+  margin: 0 auto;
   padding: 15rem 0;
 `;
 const Para = styled(motion.div)`
-  font-size: 3.6rem;
+  font-size: 2.8rem;
   line-height: 1.3;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 1.2px;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 1) 25%,
+    rgba(0, 0, 0, 1) 25%,
     rgba(255, 255, 255, 0) 50%
   );
   background-size: 300%;

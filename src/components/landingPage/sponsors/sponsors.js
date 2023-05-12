@@ -11,7 +11,9 @@ const Element = styled.section`
 `;
 const SponsorsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  width: 80%;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 `;
 
 export default function Sponsors() {
@@ -27,11 +29,17 @@ export default function Sponsors() {
           duration: 0.8,
           ease: "linear",
         }}
-        style={{ marginBottom: "5rem" }}
+        style={{ marginBottom: "3rem" }}
       >
         It carnivals Sponsors
       </HeadingSecondary>
       <SponsorsWrapper>
+        <ObjectReveal>
+          <SponsorCard />
+        </ObjectReveal>
+        <ObjectReveal>
+          <SponsorCard />
+        </ObjectReveal>
         <ObjectReveal>
           <SponsorCard />
         </ObjectReveal>

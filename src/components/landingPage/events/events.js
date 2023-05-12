@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import * as styles from "./style.module.css";
-import { HeadingSecondary } from "../../global/typography";
+import { HeadingSecondary, HeadingSecondaryE } from "../../global/typography";
 import { useInView } from "react-intersection-observer";
 import EventCard from "./eventCard";
 import ObjectReveal from "../../animation/objectReveal";
@@ -49,7 +49,7 @@ export default function Events() {
   }, []);
   return (
     <div className={styles.events}>
-      <HeadingSecondary
+      <HeadingSecondaryE
         ref={visiRef}
         variants={revealVariant}
         initial="initial"
@@ -60,26 +60,19 @@ export default function Events() {
         }}
       >
         All The Events Under It Carnival 2023
-      </HeadingSecondary>
+      </HeadingSecondaryE>
       <div ref={cardsRef} className={styles.cards}>
-        <ObjectReveal>
-          <EventCard ref={card1Ref} />
-        </ObjectReveal>
-        <ObjectReveal>
-          <EventCard ref={card2Ref} />
-        </ObjectReveal>
-        <ObjectReveal>
-          <EventCard ref={card3Ref} />
-        </ObjectReveal>
-        <ObjectReveal>
-          <EventCard ref={card4Ref} />
-        </ObjectReveal>
-        <ObjectReveal>
-          <EventCard ref={card5Ref} />
-        </ObjectReveal>
-        <ObjectReveal>
-          <EventCard ref={card6Ref} />
-        </ObjectReveal>
+        <EventCard ref={card1Ref} />
+
+        <EventCard ref={card2Ref} />
+
+        <EventCard ref={card3Ref} />
+
+        <EventCard ref={card4Ref} />
+
+        <EventCard ref={card5Ref} />
+
+        <EventCard ref={card6Ref} />
       </div>
     </div>
   );

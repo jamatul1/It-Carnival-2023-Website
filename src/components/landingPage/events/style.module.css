@@ -1,5 +1,6 @@
 .events {
-  padding: 15rem 0;
+  padding: 10rem 5rem;
+  background: #3f5efb;
 }
 .events > h2 {
   margin-bottom: 8rem;
@@ -7,6 +8,7 @@
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
 }
 
 .cards:hover > .card::after {
@@ -20,12 +22,9 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  border: 1px solid rgb(226, 226, 226);
   transform: opacity 700ms;
-}
-
-.card:hover .card-image img {
-  opacity: 0.8;
+  background: white;
+  border-radius: 0.5rem;
 }
 
 .card:hover::before {
@@ -81,7 +80,7 @@
 h3,
 h4,
 span {
-  color: rgb(240, 240, 240);
+  color: rgb(59, 59, 59);
 
   font-weight: 400;
   margin: 0px;
@@ -92,6 +91,7 @@ span {
 }
 .card-info-title h3 {
   font-size: 3rem;
+  font-weight: 600;
 }
 
 i {
@@ -100,15 +100,9 @@ i {
 
 .card-image {
   height: 160px;
-  width: 70%;
   margin: 10px 0px 0px 10px;
-  object-fit: cover;
-
+  object-fit: scale-down;
   overflow: hidden;
-}
-
-.card-image img {
-  opacity: 0.6;
 }
 
 /* .card-info-wrapper {
@@ -136,24 +130,25 @@ i {
 .cardInfoBtn {
   margin-top: 1rem;
   border: none;
-  background: transparent;
+  background: #fc466b;
   font: inherit;
-  color: rgb(200, 200, 200);
+  color: rgb(235, 235, 235);
   display: flex;
+  font-weight: 600;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding-bottom: 0.5rem;
-  text-transform: uppercase;
-  border-bottom: 1px solid rgb(185, 185, 185);
+  padding: 0.7rem 2rem;
+  border-radius: 3rem;
+  /* border-bottom: 1px solid rgb(51, 51, 51); */
   font-size: 1.4rem;
 }
 .card-info-title > h3 {
-  font-size: 1.3em;
+  font-size: 1.7em;
   line-height: 20px;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 1) 25%,
+    rgba(0, 0, 0, 1) 25%,
     rgba(255, 255, 255, 0) 50%
   );
   background-size: 300%;
@@ -168,7 +163,7 @@ i {
   margin-top: 8px;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 1) 25%,
+    rgba(0, 0, 0, 1) 25%,
     rgba(255, 255, 255, 0) 50%
   );
   background-size: 300%;
@@ -176,8 +171,18 @@ i {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media (max-width: 700px) {
+  .events {
+    padding: 7rem 3rem;
+    background: #3f5efb;
+  }
+}
 
 @media (max-width: 400px) {
+  .events {
+    padding: 5rem 1rem;
+    background: #3f5efb;
+  }
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }

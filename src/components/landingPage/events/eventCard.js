@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { textRevealVariant } from "../../animation/textReveal";
 import { useInView } from "react-intersection-observer";
 import ObjectReveal from "../../animation/objectReveal";
+import cardImg from "../../../imgs/marketing.png";
 
 const EventCard = React.forwardRef((props, ref) => {
   const { ref: contentRef, inView } = useInView({ threshold: 1 });
@@ -12,10 +13,7 @@ const EventCard = React.forwardRef((props, ref) => {
       <div ref={contentRef} className={styles.cardContent}>
         <ObjectReveal>
           <div className={styles.cardImage}>
-            <img
-              src="https://thumbs.dreamstime.com/z/event-management-vector-illustration-tiny-planning-process-person-concept-flat-persons-festive-seminar-party-other-social-164875364.jpg"
-              alt="card_img"
-            />
+            <img src={cardImg} alt="card_img" />
           </div>
         </ObjectReveal>
 
@@ -49,9 +47,7 @@ const EventCard = React.forwardRef((props, ref) => {
             </div>
 
             <ObjectReveal width="content-width">
-              <button className={styles.cardInfoBtn}>
-                Read More <span>&gt;</span>
-              </button>
+              <button className={styles.cardInfoBtn}>Read More</button>
             </ObjectReveal>
           </div>
         </div>
