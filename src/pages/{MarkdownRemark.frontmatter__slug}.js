@@ -3,23 +3,128 @@ import * as React from "react";
 import Layout from "../components/layout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { styled } from "styled-components";
+import { at } from "../utils/queryHelpers";
+import Schedule from "../components/schedule/schedule";
 
-const CoverImgWrapper = styled.div``;
+const CoverImgWrapper = styled.div`
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+  text-align: center;
+`;
 const CoverImg = styled.img``;
-const EventSummery = styled.div``;
-const SummeryWrapper = styled.div``;
+const ContentWrapper = styled.div`
+  width: 60%;
+  margin: auto;
+  margin-top: 7rem;
+  margin-bottom: 10rem;
+  ${at(1200, `width: 75%; margin-top: 5rem; margin-bottom: 6rem;`)}
+  ${at(900, `width: 85%;`)}
+${at(600, `width: 90%;margin-top: 3rem; margin-bottom: 3rem;`)}
+${at(400, `width: 94%;`)}
+`;
+const EventSummery = styled.div`
+  width: 76%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 7rem;
+  padding: 3rem 0;
+  border: 1px solid ${(p) => p.theme.bc};
+  ${at(1200, `width: 80%;`)}
+  ${at(900, `width: 85%;`)}
+${at(600, `width: 94%;`)}
+${at(400, `padding:2rem;`)}
+`;
+const SummeryWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+`;
 const Summery = styled.div``;
-const SummeryTitle = styled.h4``;
-const SummeryItem = styled.div``;
-const SummeryLabel = styled.h5``;
+const SummeryTitle = styled.h4`
+  font-size: 2.4rem;
+  border-bottom: 1px solid gray;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  padding-bottom: 0.5rem;
+  ${at(400, `font-size: 2rem;`)}
+`;
+const SummeryItem = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+`;
+const SummeryLabel = styled.h5`
+  font-size: 1.6rem;
+  font-weight: 700;
+`;
 const SummeryValue = styled.p``;
+const EventSummeryTitle = styled.h3`
+  font-size: 3.6rem;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  ${at(600, `font-size: 3rem; margin-bottom: 1.2rem;`)}
+  ${at(400, `font-size: 2.8rem;`)}
+`;
 
-const EventSummeryTitle = styled.h3``;
-
-const Article = styled.article``;
+const Article = styled.article`
+  text-align: center;
+  h1 {
+    font-weight: 400;
+    font-size: 3.6rem;
+    margin-bottom: 1.5rem;
+    ${at(600, `font-size: 3rem; margin-bottom: .2rem;`)}
+    ${at(400, `font-size: 2.8rem;`)}
+  }
+  p {
+    font-size: 1.8rem;
+  }
+`;
 const PrizeMoneyWrapper = styled.div``;
 const PrizeMoneyBanner = styled.img``;
+const EventScheduleWrapper = styled.section`
+  width: 76%;
+  margin: auto;
+  ${at(1200, `width: 80%;`)}
+  ${at(900, `width: 85%;`)}
+${at(600, `width: 94%;`)}
+h1 {
+    font-size: 3.6rem;
+  }
+`;
 
+const Heading = styled.h2`
+  text-align: center;
+  font-size: 3.6rem;
+  line-height: 1;
+  font-weight: 400;
+  ${at(600, `font-size: 3rem;`)}
+  ${at(400, `font-size: 2.8rem;`)}
+`;
+
+const RulesWrapper = styled.section`
+  width: 76%;
+  margin: auto;
+  margin-top: 5rem;
+  ${at(1200, `width: 80%;`)}
+  ${at(900, `width: 85%;`)}
+${at(600, `width: 94%;`)}
+background:gray;
+  padding-top: 3rem;
+`;
+
+const RulesList = styled.ol`
+  margin-top: 2rem;
+  padding: 1rem 5rem;
+`;
+const RuleListItem = styled.li`
+  font-size: 2rem;
+  margin-bottom: 1rem;
+`;
+
+const EventFooter = styled.footer`
+  padding: 5rem;
+`;
 export default function EventTemplate({ data: { markdownRemark } }) {
   const { frontmatter, html } = markdownRemark;
   let coverImg = getImage(
@@ -31,12 +136,17 @@ export default function EventTemplate({ data: { markdownRemark } }) {
   let summery = markdownRemark.frontmatter.summery;
   return (
     <Layout>
-      <h1>{frontmatter.title}</h1>
-      <h2>{frontmatter.date}</h2>
       <CoverImgWrapper>
         <GatsbyImage image={getImage(coverImg)} />
       </CoverImgWrapper>
-
+      <ContentWrapper>
+        <Article>
+          <div
+            className="post-body"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        </Article>
+      </ContentWrapper>
       <EventSummery>
         <EventSummeryTitle>Event Summery</EventSummeryTitle>
         <SummeryWrapper>
@@ -57,12 +167,26 @@ export default function EventTemplate({ data: { markdownRemark } }) {
           })}
         </SummeryWrapper>
       </EventSummery>
-      <Article>
-        <div className="post-body" dangerouslySetInnerHTML={{ __html: html }} />
-      </Article>
-      <PrizeMoneyWrapper>
-        <GatsbyImage image={getImage(prizeImg)} />
-      </PrizeMoneyWrapper>
+      <EventScheduleWrapper>
+        <Heading>Schedules</Heading>
+        <Schedule
+          withHeading={false}
+          schedules={[
+            { title: "IUPC", time: "11 AM" },
+            { title: "IUPC", time: "11 AM" },
+            { title: "IUPC", time: "11 AM" },
+            { title: "IUPC", time: "11 AM" },
+          ]}
+        ></Schedule>
+      </EventScheduleWrapper>
+      <RulesWrapper>
+        <Heading>Rules</Heading>
+        <RulesList>
+          <RuleListItem> You need to put your arm on shoulder</RuleListItem>
+          <RuleListItem> You need to put your arm on shoulder</RuleListItem>
+        </RulesList>
+      </RulesWrapper>
+      <EventFooter>Footer for event</EventFooter>
     </Layout>
   );
 }
@@ -83,12 +207,7 @@ export const pageQuery = graphql`
         }
         coverImg {
           childImageSharp {
-            gatsbyImageData(width: 800)
-          }
-        }
-        prizeImg {
-          childImageSharp {
-            gatsbyImageData(width: 800)
+            gatsbyImageData(width: 1000)
           }
         }
       }

@@ -26,28 +26,30 @@ const icons = ["hour", "play", "view"];
 // };
 
 const SponsorsWrapper = styled.div`
-  padding: 15rem 0;
+  padding: 5rem 0;
 `;
-export default function Schedule({ schedules = [] }) {
+export default function Schedule({ schedules = [], withHeading = true }) {
   const { ref: visiRef, inView } = useInView({});
   return (
     <>
       {schedules.length > 0 && (
         <SponsorsWrapper>
-          <HeadingSecondary
-            ref={visiRef}
-            variants={textRevealVariant}
-            initial="initial"
-            animate={inView ? "animate" : "initial"}
-            transition={{
-              duration: 0.8,
-              ease: "linear",
-            }}
-            style={{ marginBottom: "5rem" }}
-          >
-            {" "}
-            Events Schedules
-          </HeadingSecondary>
+          {withHeading && (
+            <HeadingSecondary
+              ref={visiRef}
+              variants={textRevealVariant}
+              initial="initial"
+              animate={inView ? "animate" : "initial"}
+              transition={{
+                duration: 0.8,
+                ease: "linear",
+              }}
+              style={{ marginBottom: "5rem" }}
+            >
+              {" "}
+              Events Schedules
+            </HeadingSecondary>
+          )}
           <VerticalTimeline>
             {schedules.map((s, i) => {
               let randomStyle =
@@ -83,7 +85,6 @@ export default function Schedule({ schedules = [] }) {
               );
             })}
           </VerticalTimeline>
-          ;
         </SponsorsWrapper>
       )}
     </>

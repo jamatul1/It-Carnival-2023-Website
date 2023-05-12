@@ -23,14 +23,7 @@ summery:
   ]
 ---
 
-## What I'm Working On
+# Descriptions
 
-Right now, I'm working through a [DigitalOcean tutorial](https://www.digitalocean.com/community/tutorials) on using [Gatsby](https://www.gatsbyjs.com/) with Markdown.
-
-Another paragrahp
-
-Then another
-
-Then another
-
-And finally here
+We are now in danger for using social media. It blocks our mind from doing
+It blocks our mind from doing. We are now in danger for using social media.
