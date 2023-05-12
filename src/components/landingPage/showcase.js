@@ -23,6 +23,13 @@ const Element = styled.div`
   margin-bottom: 5rem;
   height: 100vh;
   width: 100%;
+  background: #fc466b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3f5efb,
+    #fc466b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3f5efb, #fc466b);
 `;
 
 const ParticlesWrapper = styled.div`
@@ -41,7 +48,7 @@ const Subtitle = styled.h4`
   line-height: 1.2;
   top: 40%;
   ${at(825, `top: 38%; font-size: 1.8rem;`)}
-  ${at(572, `top: 35%; font-size: 1.6rem;`)}
+  ${at(572, `top: 30%; font-size: 1.6rem;`)}
  
   left: 50%;
   transform: translate(-50%, -50%);

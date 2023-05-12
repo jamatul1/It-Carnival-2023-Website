@@ -7,7 +7,7 @@ const Reveal = styled(motion.div)`
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 25%,
-    ${(p) => p.theme.bgc} 50%
+    // ${(p) => p.theme.wc} 50%
   );
   background-size: 300%;
   height: 100%;

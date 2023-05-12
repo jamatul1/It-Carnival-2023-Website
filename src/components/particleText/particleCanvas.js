@@ -11,7 +11,7 @@ export function startCanvas(canvas, text = "It Carnival 2023") {
       this.color = color;
       this.originX = x;
       this.originY = y;
-      this.size = this.effect.gap - 1;
+      this.size = this.effect.gap;
       this.dx = 0;
       this.dy = 0;
       this.vx = 0;
@@ -20,7 +20,7 @@ export function startCanvas(canvas, text = "It Carnival 2023") {
       this.angle = 0;
       this.distance = 0;
       this.friction = Math.random() * 0.6 + 0.15;
-      this.ease = Math.random() * 0.03 + 0.0005;
+      this.ease = Math.random() * 0.1 + 0.0005;
     }
     draw() {
       this.effect.context.fillStyle = this.color;
@@ -52,14 +52,14 @@ export function startCanvas(canvas, text = "It Carnival 2023") {
       this.canvasHeight = canvasHeight;
       this.textX = this.canvasWidth / 2;
       this.textY = this.canvasHeight / 2;
-      this.fontSize = 62;
+      this.fontSize = 72;
       this.lineHeight = this.fontSize * 0.8;
       this.maxTextWidth = this.canvasWidth * 0.8;
       this.textVerticleOffset = 1;
 
       // particle Text
       this.particles = [];
-      this.gap = 2;
+      this.gap = 3;
       this.mouse = {
         radius: 20000,
         x: 0,
@@ -78,9 +78,11 @@ export function startCanvas(canvas, text = "It Carnival 2023") {
         this.canvasWidth,
         this.canvasHeight
       );
-      gradient.addColorStop(0.3, "#fff");
-      gradient.addColorStop(0.5, "fuchsia");
-      gradient.addColorStop(0.7, "purple");
+      gradient.addColorStop(0.3, "#f7b733");
+      // gradient.addColorStop(0.4, "#fc4a1a");
+      gradient.addColorStop(0.7, "#f7b733");
+
+      // gradient.addColorStop(0.7, "#fff");
       this.context.fillStyle = gradient;
       this.context.textAlign = "center";
       this.context.textBaseline = "middle";

@@ -16,4 +16,5 @@ body {
   line-height: 1.7;
   font-size: 1.6rem;
   overflow-x: hidden;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

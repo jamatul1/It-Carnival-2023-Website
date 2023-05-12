@@ -126,7 +126,7 @@ function NavSm() {
 
 export default function Nav() {
   const shouldHaveSm = useMediaQuery({
-    query: "(max-width: 1024px)",
+    query: "(max-width: 800px)",
   });
 
   return shouldHaveSm ? <NavSm /> : <NavLg />;

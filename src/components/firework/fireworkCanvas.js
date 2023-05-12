@@ -6,6 +6,8 @@ export function initAll(canvas) {
   const width = window.innerWidth;
   const height = window.innerHeight;
 
+  let shootingDelay = width > 600 ? 50 : 100;
+
   // set background to be fullscreen
   canvas.width = width;
   canvas.height = height;
@@ -59,6 +61,17 @@ export function initAll(canvas) {
     window.addEventListener("resize", (e) => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+
+      context.clearRect(0, 0, width, height);
+
+      // save context to remove transformation afterwards
+      context.save();
+
+      // restores the empty context state
+      context.restore();
+
+      // adjust shootingDelay
+      adjustShootingDelay();
     });
     // listen to the mousemove event and
     // set the mouse positions to the correct coordinates
@@ -78,14 +91,33 @@ export function initAll(canvas) {
     });
   };
 
+  function simulateMouseClick() {
+    positions.mouseX = Math.random() * canvas.width;
+    positions.mouseY = Math.random() * canvas.height;
+    positions.anchorX = positions.mouseX;
+    positions.anchorY = positions.mouseY;
+    mouseClicked = true;
+  }
+
+  function adjustShootingDelay() {
+    shootingDelay = canvas.width > 600 ? 50 : 100;
+  }
+  let prevTime = Date.now();
   // running the fireworks
   const loop = () => {
+    if (prevTime + shootingDelay < Date.now()) {
+      simulateMouseClick();
+      prevTime = Date.now();
+    }
     requestAnimationFrame(loop); // call the loop function indefinitely and redraw the screen every frame
     drawAnchor();
     if (mouseClicked) {
-      fireworks.push(new Firework());
+      if (fireworks.length < 10) {
+        fireworks.push(new Firework());
+      }
+      console.log(fireworks.length);
+      mouseClicked = false;
     }
-
     let fireworkIndex = fireworks.length;
     while (fireworkIndex--) {
       fireworks[fireworkIndex].draw(fireworkIndex);
@@ -118,7 +150,7 @@ export function initAll(canvas) {
   class Firework {
     constructor() {
       const init = () => {
-        let fireworkLength = 8;
+        let fireworkLength = 15;
 
         // current coordinates
         this.x = positions.anchorX;
@@ -142,9 +174,9 @@ export function initAll(canvas) {
           this.target_y - positions.anchorY,
           this.target_x - positions.anchorX
         );
-        this.speed = 15;
+        this.speed = 10;
         this.friction = 0.99;
-        this.hue = random(17, 60);
+        this.hue = random(178, 255);
 
         while (fireworkLength--) {
           this.coordinates.push([this.x, this.y]);
@@ -217,7 +249,7 @@ export function initAll(canvas) {
         this.friction = 0.95;
         this.gravity = 2;
 
-        this.hue = random(17, 60);
+        this.hue = random(35, 70);
         this.alpha = 1;
         this.decay = random(0.015, 0.03);
 
