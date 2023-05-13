@@ -5,6 +5,10 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { styled } from "styled-components";
 import { at } from "../utils/queryHelpers";
 import Schedule from "../components/schedule/schedule";
+import {
+  HeadingSecondary,
+  HeadingSecondaryE,
+} from "../components/global/typography";
 
 const CoverImgWrapper = styled.div`
   width: 90%;
@@ -29,7 +33,6 @@ const EventSummery = styled.div`
   text-align: center;
   margin-bottom: 7rem;
   padding: 3rem 0;
-  border: 1px solid ${(p) => p.theme.bc};
   ${at(1200, `width: 80%;`)}
   ${at(900, `width: 85%;`)}
 ${at(600, `width: 94%;`)}
@@ -38,12 +41,13 @@ ${at(400, `padding:2rem;`)}
 const SummeryWrapper = styled.div`
   display: flex;
   justify-content: center;
-  gap: 5rem;
+  gap: 20rem;
+  flex-wrap: wrap;
 `;
 const Summery = styled.div``;
 const SummeryTitle = styled.h4`
   font-size: 2.4rem;
-  border-bottom: 1px solid gray;
+  font-weight: 600;
   margin-bottom: 1rem;
   line-height: 1.2;
   padding-bottom: 0.5rem;
@@ -70,11 +74,17 @@ const EventSummeryTitle = styled.h3`
 const Article = styled.article`
   text-align: center;
   h1 {
+    font-size: 4.7rem;
     font-weight: 400;
-    font-size: 3.6rem;
-    margin-bottom: 1.5rem;
-    ${at(600, `font-size: 3rem; margin-bottom: .2rem;`)}
-    ${at(400, `font-size: 2.8rem;`)}
+
+    line-height: 1.2;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    ${at(800, `font-size: 4rem; `)}
+    ${at(600, `font-size: 3.8rem;`)}
+  ${at(500, `font-size: 3.6rem; `)}
+  margin-bottom: 3rem;
   }
   p {
     font-size: 1.8rem;
@@ -82,49 +92,42 @@ const Article = styled.article`
 `;
 const PrizeMoneyWrapper = styled.div``;
 const PrizeMoneyBanner = styled.img``;
-const EventScheduleWrapper = styled.section`
-  width: 76%;
-  margin: auto;
-  ${at(1200, `width: 80%;`)}
-  ${at(900, `width: 85%;`)}
-${at(600, `width: 94%;`)}
-h1 {
-    font-size: 3.6rem;
-  }
-`;
+const EventScheduleWrapper = styled.section``;
 
 const Heading = styled.h2`
   text-align: center;
-  font-size: 3.6rem;
-  line-height: 1;
+  font-size: 4.7rem;
   font-weight: 400;
-  ${at(600, `font-size: 3rem;`)}
-  ${at(400, `font-size: 2.8rem;`)}
+
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  ${at(800, `font-size: 4rem; `)}
+  ${at(600, `font-size: 3.8rem;`)}
+${at(500, `font-size: 3.6rem; `)}
 `;
 
 const RulesWrapper = styled.section`
-  width: 76%;
   margin: auto;
   margin-top: 5rem;
-  ${at(1200, `width: 80%;`)}
-  ${at(900, `width: 85%;`)}
-${at(600, `width: 94%;`)}
-background:gray;
-  padding-top: 3rem;
+  border-bottom: 1px solid #cbcbcb;
+  padding: 5rem 0 8rem 0;
 `;
 
 const RulesList = styled.ol`
-  margin-top: 2rem;
   padding: 1rem 5rem;
+  width: 60%;
+  ${at(1200, `width: 70%;`)}
+  ${at(900, `width: 80%;`)}
+${at(600, `width: 94%;`)}
+margin:auto;
 `;
 const RuleListItem = styled.li`
   font-size: 2rem;
   margin-bottom: 1rem;
 `;
 
-const EventFooter = styled.footer`
-  padding: 5rem;
-`;
 export default function EventTemplate({ data: { markdownRemark } }) {
   const { frontmatter, html } = markdownRemark;
   let coverImg = getImage(
@@ -148,7 +151,13 @@ export default function EventTemplate({ data: { markdownRemark } }) {
         </Article>
       </ContentWrapper>
       <EventSummery>
-        <EventSummeryTitle>Event Summery</EventSummeryTitle>
+        <Heading
+          style={{
+            marginBottom: "3rem",
+          }}
+        >
+          Summery
+        </Heading>
         <SummeryWrapper>
           {summery.map((s, i) => {
             return (
@@ -168,9 +177,7 @@ export default function EventTemplate({ data: { markdownRemark } }) {
         </SummeryWrapper>
       </EventSummery>
       <EventScheduleWrapper>
-        <Heading>Schedules</Heading>
         <Schedule
-          withHeading={false}
           schedules={[
             { title: "IUPC", time: "11 AM" },
             { title: "IUPC", time: "11 AM" },
@@ -186,7 +193,6 @@ export default function EventTemplate({ data: { markdownRemark } }) {
           <RuleListItem> You need to put your arm on shoulder</RuleListItem>
         </RulesList>
       </RulesWrapper>
-      <EventFooter>Footer for event</EventFooter>
     </Layout>
   );
 }
