@@ -83,7 +83,7 @@ const NavSmBackground = styled(motion.div)`
   top: 0;
   z-index: 100;
   left: 0;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.9);
 `;
 const NavSmMenuBtn = styled.button`
   ${fCenter()}

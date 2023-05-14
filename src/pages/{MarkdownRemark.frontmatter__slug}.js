@@ -3,95 +3,57 @@ import * as React from "react";
 import Layout from "../components/layout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { styled } from "styled-components";
-import { at } from "../utils/queryHelpers";
+import { at, fCenter } from "../utils/queryHelpers";
 import Schedule from "../components/schedule/schedule";
-import {
-  HeadingSecondary,
-  HeadingSecondaryE,
-} from "../components/global/typography";
+import EventBanner from "../components/eventBanner/eventBanner";
+import boxImgUrl from "../imgs/icons/box.png";
+import calendarImgUrl from "../imgs/icons/calendar.png";
+import feeImgUrl from "../imgs/icons/fee.png";
+import living_roomImgUrl from "../imgs/icons/living-room.png";
+import osImgUrl from "../imgs/icons/os.png";
+import period_timeImgUrl from "../imgs/icons/period-time.png";
+import sigmaImgUrl from "../imgs/icons/sigma.png";
+import translatorImgUrl from "../imgs/icons/translator.png";
+const DescriptionWrapper = styled.section`
+  padding: 10rem 2rem;
+  text-align: center;
+  background: rgb(63, 94, 251);
+  color: white;
+`;
+const Description = styled.p`
+  font-size: 2rem;
+  line-height: 1.5;
+`;
 
-const CoverImgWrapper = styled.div`
-  width: 90%;
-  margin: auto;
-  margin-top: 2rem;
-  text-align: center;
+const SummeryWrapper = styled.section`
+  padding: 10rem 2rem;
 `;
-const CoverImg = styled.img``;
-const ContentWrapper = styled.div`
-  width: 60%;
-  margin: auto;
-  margin-top: 7rem;
-  margin-bottom: 10rem;
-  ${at(1200, `width: 75%; margin-top: 5rem; margin-bottom: 6rem;`)}
-  ${at(900, `width: 85%;`)}
-${at(600, `width: 90%;margin-top: 3rem; margin-bottom: 3rem;`)}
-${at(400, `width: 94%;`)}
+const Summeries = styled.ul`
+  list-style: none;
+  ${fCenter()}
+  flex-direction:column;
+  gap: 1.5rem;
 `;
-const EventSummery = styled.div`
-  width: 76%;
-  margin: auto;
-  text-align: center;
-  margin-bottom: 7rem;
-  padding: 3rem 0;
-  ${at(1200, `width: 80%;`)}
-  ${at(900, `width: 85%;`)}
-${at(600, `width: 94%;`)}
-${at(400, `padding:2rem;`)}
+const SItem = styled.li`
+  ${fCenter()};
+  font-size: 1.8rem;
+  gap: 2rem;
 `;
-const SummeryWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 20rem;
-  flex-wrap: wrap;
-`;
-const Summery = styled.div``;
-const SummeryTitle = styled.h4`
-  font-size: 2.4rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-  padding-bottom: 0.5rem;
-  ${at(400, `font-size: 2rem;`)}
-`;
-const SummeryItem = styled.div`
-  display: flex;
+const SItemLeft = styled.div`
+  ${fCenter()};
   gap: 1rem;
-  align-items: center;
-`;
-const SummeryLabel = styled.h5`
-  font-size: 1.6rem;
-  font-weight: 700;
-`;
-const SummeryValue = styled.p``;
-const EventSummeryTitle = styled.h3`
-  font-size: 3.6rem;
-  line-height: 1;
-  margin-bottom: 1.5rem;
-  ${at(600, `font-size: 3rem; margin-bottom: 1.2rem;`)}
-  ${at(400, `font-size: 2.8rem;`)}
-`;
-
-const Article = styled.article`
-  text-align: center;
-  h1 {
-    font-size: 4.7rem;
-    font-weight: 400;
-
-    line-height: 1.2;
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    ${at(800, `font-size: 4rem; `)}
-    ${at(600, `font-size: 3.8rem;`)}
-  ${at(500, `font-size: 3.6rem; `)}
-  margin-bottom: 3rem;
+  img {
+    height: 2rem;
+    width: 2rem;
   }
-  p {
-    font-size: 1.8rem;
+  span {
+    font-weight: 700;
+    font-size: 2rem;
   }
 `;
-const PrizeMoneyWrapper = styled.div``;
-const PrizeMoneyBanner = styled.img``;
+const SItemRight = styled.span`
+  font-size: 2rem;
+`;
 const EventScheduleWrapper = styled.section``;
 
 const Heading = styled.h2`
@@ -101,31 +63,30 @@ const Heading = styled.h2`
 
   line-height: 1.2;
   text-align: center;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
   ${at(800, `font-size: 4rem; `)}
   ${at(600, `font-size: 3.8rem;`)}
 ${at(500, `font-size: 3.6rem; `)}
 `;
 
 const RulesWrapper = styled.section`
-  margin: auto;
-  margin-top: 5rem;
   border-bottom: 1px solid #cbcbcb;
-  padding: 5rem 0 8rem 0;
+  padding: 10rem 0 8rem 0;
+  background: #3f5efb2b;
 `;
 
 const RulesList = styled.ol`
   padding: 1rem 5rem;
   width: 60%;
   ${at(1200, `width: 70%;`)}
-  ${at(900, `width: 80%;`)}
-${at(600, `width: 94%;`)}
+  ${at(900, `width: 80%; padding:1rem;`)}
+  // ${at(600, `width: 100%; padding:2rem; text-align:center;`)}
 margin:auto;
 `;
 const RuleListItem = styled.li`
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
 `;
 
 export default function EventTemplate({ data: { markdownRemark } }) {
@@ -139,58 +100,97 @@ export default function EventTemplate({ data: { markdownRemark } }) {
   let summery = markdownRemark.frontmatter.summery;
   return (
     <Layout>
-      <CoverImgWrapper>
-        <GatsbyImage image={getImage(coverImg)} />
-      </CoverImgWrapper>
-      <ContentWrapper>
-        <Article>
-          <div
-            className="post-body"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        </Article>
-      </ContentWrapper>
-      <EventSummery>
-        <Heading
-          style={{
-            marginBottom: "3rem",
-          }}
-        >
-          Summery
-        </Heading>
-        <SummeryWrapper>
-          {summery.map((s, i) => {
-            return (
-              <Summery key={i}>
-                <SummeryTitle>{s.title}</SummeryTitle>
-                {s.items.map((item, i) => {
-                  return (
-                    <SummeryItem key={i}>
-                      <SummeryLabel>{item.key}</SummeryLabel>
-                      <SummeryValue>{item.value}</SummeryValue>
-                    </SummeryItem>
-                  );
-                })}
-              </Summery>
-            );
-          })}
-        </SummeryWrapper>
-      </EventSummery>
+      <EventBanner />
+      <DescriptionWrapper>
+        <Heading>Description</Heading>
+        <Description>
+          There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected
+          humour, or randomised words which don't look even slightly believable.
+          If you are going to use a passage of Lorem Ipsum, you need to be sure
+          there isn't anything embarrassing hidden in the middle of text.
+        </Description>
+      </DescriptionWrapper>
+      <SummeryWrapper>
+        <Heading>Summery</Heading>
+        <Summeries>
+          <SItem>
+            <SItemLeft>
+              <img src={period_timeImgUrl} alt="img" />
+              <span>Duration :</span>
+            </SItemLeft>
+            <SItemRight>5 Hours</SItemRight>
+          </SItem>
+          <SItem>
+            <SItemLeft>
+              <img src={boxImgUrl} alt="img" />
+              <span>Team Size :</span>
+            </SItemLeft>
+            <SItemRight>3 Members</SItemRight>
+          </SItem>
+          <SItem>
+            <SItemLeft>
+              <img src={feeImgUrl} alt="img" />
+              <span>Registration Fees :</span>
+            </SItemLeft>
+            <SItemRight>450 tk</SItemRight>
+          </SItem>
+          <SItem>
+            <SItemLeft>
+              <img src={osImgUrl} alt="img" />
+              <span>Os :</span>
+            </SItemLeft>
+            <SItemRight>Windows</SItemRight>
+          </SItem>
+          <SItem>
+            <SItemLeft>
+              <img src={translatorImgUrl} alt="img" />
+              <span>Languages :</span>
+            </SItemLeft>
+            <SItemRight>Javascript</SItemRight>
+          </SItem>
+        </Summeries>
+      </SummeryWrapper>
       <EventScheduleWrapper>
         <Schedule
           schedules={[
-            { title: "IUPC", time: "11 AM" },
-            { title: "IUPC", time: "11 AM" },
-            { title: "IUPC", time: "11 AM" },
-            { title: "IUPC", time: "11 AM" },
+            {
+              title: "27 January 2023, 10:30 AM",
+              time: "UPC Team Reporting, Registration, Kit Collection",
+            },
+            {
+              title: "27 January 2023, 10:30 AM",
+              time: "UPC Team Reporting, Registration, Kit Collection",
+            },
+            {
+              title: "27 January 2023, 10:30 AM",
+              time: "UPC Team Reporting, Registration, Kit Collection",
+            },
+            {
+              title: "27 January 2023, 10:30 AM",
+              time: "UPC Team Reporting, Registration, Kit Collection",
+            },
           ]}
         ></Schedule>
       </EventScheduleWrapper>
       <RulesWrapper>
         <Heading>Rules</Heading>
         <RulesList>
+          <RuleListItem>
+            {" "}
+            Solutions to problems submitted for judging are called runs. Each
+            run is judged as accepted or rejected by the judge, and the team is
+            notified of the result. Only source code should be submitted, not
+            the executables or any other files.
+          </RuleListItem>
           <RuleListItem> You need to put your arm on shoulder</RuleListItem>
-          <RuleListItem> You need to put your arm on shoulder</RuleListItem>
+          <RuleListItem>
+            {" "}
+            Solutions to problems submitted for judging are called runs. Each
+            run is judged as accepted or rejected by the judge, and the team is
+            notified of the result. Only source code should be submitted, not
+            the executables or any other files.
+          </RuleListItem>
         </RulesList>
       </RulesWrapper>
     </Layout>

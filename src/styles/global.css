@@ -9,6 +9,10 @@ html {
   box-sizing: border-box;
 }
 
+.tet {
+  background-color: #f4ed66;
+}
+
 body {
   background-color: #ffffff;
   color: #000000;

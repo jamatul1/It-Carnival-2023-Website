@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
-import { at } from "../../utils/queryHelpers";
+import { at, fCenter } from "../../utils/queryHelpers";
 
 export const Button = styled.button`
+font-weight:600;
 background-color: #3f5efb;
 color: #fff;
 text-transform: uppercase;
@@ -12,6 +13,8 @@ border-radius: 10rem;
 transition: all .2s;
 position: relative;
 font-size: $default-font-size;
+${fCenter()}
+gap:.5rem;
 ${at(980, `padding: 1.2rem 3rem;`)}
 //Change for the <button> element
 border: none;
@@ -84,3 +87,12 @@ cursor: pointer;
     }
     
 }`;
+
+export const WhiteButton = styled(Button)`
+  background-color: white;
+  color: black;
+
+  &::after {
+    background-color: white;
+  }
+`;

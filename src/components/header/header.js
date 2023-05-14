@@ -8,12 +8,11 @@ import { Button } from "../btn/btn";
 import { motion } from "framer-motion";
 
 const Element = styled(motion.header)`
-  width: 100%;
   position: fixed;
+  width: 100vw;
   top: 0;
   z-index: 100000;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
+  background: linear-gradient(to right, #3f5efb, #fc466b);
 `;
 const Wrapper = styled.div`
   height: 6.5rem;
@@ -84,7 +83,9 @@ export default function Header() {
         {/* <RegiBtn>
           <FeatherIcon size={16} icon="clipboard" /> Registration
         </RegiBtn> */}
-        <Button>Register</Button>
+        <Button>
+          <FeatherIcon size={18} icon="git-merge"></FeatherIcon> Register
+        </Button>
       </Wrapper>
     </Element>
   );

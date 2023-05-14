@@ -7,6 +7,8 @@ import { at, fCenter } from "../../utils/queryHelpers";
 
 const Element = styled.footer`
   padding: 3rem;
+  width: 80%;
+  margin: auto;
 `;
 const Top = styled.div`
   display: flex;
@@ -25,8 +27,12 @@ const ClubItem = styled.div`
   img {
     width: 10rem;
   }
+  ${at(715, `margin:auto;`)}
 `;
 const HotlineItem = styled.div`
+  > h2 {
+    font-weight: 600;
+  }
   > p > span {
     font-weight: bold;
     word-spacing: 5px;
@@ -34,6 +40,7 @@ const HotlineItem = styled.div`
   > p {
     margin-bottom: 2rem;
   }
+  ${at(715, `margin:auto;`)}
 `;
 const DeveloperItem = styled.div`
   display: flex;

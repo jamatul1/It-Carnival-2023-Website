@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 
 export const HeadingSecondary = styled(motion.h2)`
   font-size: 4.7rem;
-  font-weight: 400;
+  font-weight: 600;
   padding-left: 8rem;
   line-height: 1.2;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 25%,
@@ -29,7 +29,7 @@ export const HeadingSecondaryE = styled(motion.h2)`
 
   line-height: 1.2;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 1) 25%,

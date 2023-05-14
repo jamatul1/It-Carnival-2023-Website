@@ -28,7 +28,7 @@ const icons = ["hour", "play", "view"];
 
 const Element = styled.div`
   padding: 5rem 0;
-
+  padding-bottom: 10rem;
   background: rgb(63, 94, 251);
 `;
 const SponsorsWrapper = styled.div`
@@ -86,7 +86,7 @@ export default function Schedule({ schedules = [], withHeading = true }) {
                     }}
                   >
                     <h2
-                      style={{ fontSize: 24 }}
+                      style={{ fontSize: 24, lineHeight: 1.2 }}
                       className="vertical-timeline-element-title"
                     >
                       {s.title}
