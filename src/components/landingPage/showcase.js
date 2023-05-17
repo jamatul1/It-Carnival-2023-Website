@@ -10,6 +10,9 @@ import { motion } from "framer-motion";
 const FireworkWrapper = styled.div`
   position: absolute;
   z-index: 10000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 const MagicalTextWrapper = styled.div`
   position: absolute;

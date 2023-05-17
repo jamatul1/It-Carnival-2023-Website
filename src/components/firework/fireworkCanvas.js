@@ -9,8 +9,8 @@ export function initAll(canvas) {
   let shootingDelay = width > 600 ? 50 : 100;
 
   // set background to be fullscreen
-  canvas.width = width;
-  canvas.height = height;
+  canvas.width = width / 3;
+  canvas.height = height / 3;
 
   const positions = {
     mouseX: 0,
@@ -59,8 +59,8 @@ export function initAll(canvas) {
 
   const attachEventListeners = () => {
     window.addEventListener("resize", (e) => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth / 3;
+      canvas.height = window.innerHeight / 3;
 
       context.clearRect(0, 0, width, height);
 
@@ -152,7 +152,7 @@ export function initAll(canvas) {
   class Firework {
     constructor() {
       const init = () => {
-        let fireworkLength = 15;
+        let fireworkLength = 5;
 
         // current coordinates
         this.x = positions.anchorX;

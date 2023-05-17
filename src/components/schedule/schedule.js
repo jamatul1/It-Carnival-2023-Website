@@ -3,17 +3,17 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { HeadingSecondary, HeadingSecondaryE } from "../global/typography";
+import HeadingSecondary from "../global/typography";
 import React from "react";
 
 import { styled } from "styled-components";
-import { textRevealVariant } from "../animation/textReveal";
+
 import { useInView } from "react-intersection-observer";
 import { at } from "../../utils/queryHelpers";
 const styles = [
   {
     background: "#fff",
-    color: "black",
+    color: "#535353",
 
     borderRadius: 10,
   },
@@ -29,7 +29,7 @@ const icons = ["hour", "play", "view"];
 const Element = styled.div`
   padding: 5rem 0;
   padding-bottom: 10rem;
-  background: rgb(63, 94, 251);
+  background: ${(p) => p.theme.gd2};
 `;
 const SponsorsWrapper = styled.div`
   width: 60%;
@@ -44,20 +44,13 @@ export default function Schedule({ schedules = [], withHeading = true }) {
         <Element>
           <SponsorsWrapper>
             {withHeading && (
-              <HeadingSecondaryE
-                ref={visiRef}
-                variants={textRevealVariant}
-                initial="initial"
-                animate={inView ? "animate" : "initial"}
-                transition={{
-                  duration: 0.8,
-                  ease: "linear",
-                }}
-                style={{ marginBottom: "5rem" }}
+              <HeadingSecondary
+                style={{ marginBottom: "4rem" }}
+                counter={4}
+                color="white"
               >
-                {" "}
-                Events Schedules
-              </HeadingSecondaryE>
+                Schedules
+              </HeadingSecondary>
             )}
             <VerticalTimeline>
               {schedules.map((s, i) => {

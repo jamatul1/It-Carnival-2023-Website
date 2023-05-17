@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import * as styles from "./style.module.css";
-import { HeadingSecondary, HeadingSecondaryE } from "../../global/typography";
+import HeadingSecondary from "../../global/typography";
 import { useInView } from "react-intersection-observer";
 import EventCard from "./eventCard";
 import ObjectReveal from "../../animation/objectReveal";
@@ -49,18 +49,13 @@ export default function Events() {
   }, []);
   return (
     <div className={styles.events}>
-      <HeadingSecondaryE
-        ref={visiRef}
-        variants={revealVariant}
-        initial="initial"
-        animate={inView ? "animate" : "initial"}
-        transition={{
-          duration: 0.8,
-          ease: "linear",
-        }}
+      <HeadingSecondary
+        counter={2}
+        style={{ marginBottom: "5rem" }}
+        color="white"
       >
         All The Events Under It Carnival 2023
-      </HeadingSecondaryE>
+      </HeadingSecondary>
       <div ref={cardsRef} className={styles.cards}>
         <EventCard ref={card1Ref} />
 

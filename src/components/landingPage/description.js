@@ -2,6 +2,8 @@ import { motion, useScroll } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { styled } from "styled-components";
+import HeadingSecondary from "../global/typography";
+import { at } from "../../utils/queryHelpers";
 const revealVariant = {
   initial: {
     backgroundPosition: "100%",
@@ -11,13 +13,15 @@ const revealVariant = {
   },
 };
 const Element = styled.div`
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   padding: 15rem 0;
+  ${at(900, `width:80%;`)}
+  ${at(500, `width:90%;`)}
 `;
 const Para = styled(motion.div)`
-  font-size: 2.8rem;
-  line-height: 1.3;
+  font-size: 2.4rem;
+  line-height: 1.5;
   font-weight: 400;
   letter-spacing: 1.2px;
   background: linear-gradient(
@@ -42,6 +46,9 @@ export default function Description() {
   }, [inView]);
   return (
     <Element>
+      <HeadingSecondary counter={1} style={{ marginBottom: "3rem" }}>
+        Description
+      </HeadingSecondary>
       <Para
         ref={ref}
         variants={revealVariant}

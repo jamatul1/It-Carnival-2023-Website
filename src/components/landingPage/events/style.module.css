@@ -1,6 +1,7 @@
 .events {
   padding: 10rem 5rem;
-  background: #3f5efb;
+
+  background: linear-gradient(90deg, #405efb, #a551ad);
 }
 .events > h2 {
   margin-bottom: 8rem;
@@ -9,6 +10,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
+  width: 80%;
+  margin: auto;
 }
 
 .cards:hover > .card::after {
@@ -174,7 +177,9 @@ i {
 @media (max-width: 700px) {
   .events {
     padding: 7rem 3rem;
-    background: #3f5efb;
+  }
+  .cards {
+    width: 100%;
   }
 }
 
