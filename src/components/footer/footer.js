@@ -6,6 +6,10 @@ import developerImg from "../../imgs/me.png";
 import { at, fCenter } from "../../utils/queryHelpers";
 
 const Element = styled.footer`
+  background: #303061;
+`;
+
+const Wrapper = styled.div`
   padding: 3rem;
   width: 80%;
   margin: auto;
@@ -26,6 +30,7 @@ const ClubItem = styled.div`
   flex-direction:column;
   img {
     width: 10rem;
+    border-radius: 50%;
   }
   ${at(715, `margin:auto;`)}
 `;
@@ -54,6 +59,9 @@ const DeveloperItem = styled.div`
     object-fit: cover;
     border-radius: 10rem;
   }
+  h4 {
+    color: #fff;
+  }
   h6 {
     font-size: 1.4rem;
   }
@@ -80,48 +88,52 @@ const Social = styled.a`
   gap: 0.5rem;
   span {
     font-weight: 600;
+    color: #fff;
   }
 `;
 
 export default function Footer() {
   return (
     <Element>
-      <Top>
-        <ClubItem>
-          <img src={clubImg} alt="club img" />
-          <p>Patuakhali Science and Technology University Cse Club</p>
-        </ClubItem>
-        <HotlineItem>
-          <h2>Contact Us</h2>
-          <p>
-            <span>Hotline: </span> 019348989, 0173489992, 0192394838
-          </p>
-          <HotlineSocials>
-            <Social>
-              <FeatherIcon icon={"life-buoy"} />
-              <span>Discord</span>
-            </Social>
-            <Social>
-              <FeatherIcon icon={"facebook"} />
-              <span>Facebook</span>
-            </Social>
-            <Social href="/me">
-              <FeatherIcon icon={"mail"} />
-              <span>Discord</span>
-            </Social>
-          </HotlineSocials>
-        </HotlineItem>
-        <DeveloperItem>
-          <h4>This site is design & developed By </h4>
-          <img src={developerImg} alt="developer-img" />
-          <h6>Jamatul Talukder</h6>
-        </DeveloperItem>
-      </Top>
-      <Bottom>
-        <Copyright>
-          © CSE CLUB Presents It Carnival 2023. All rights reserved.
-        </Copyright>
-      </Bottom>
+      <Wrapper>
+        <Top>
+          <ClubItem>
+            <img src={clubImg} alt="club img" />
+            <p>Patuakhali Science and Technology University Cse Club</p>
+          </ClubItem>
+          <HotlineItem>
+            <h2>Contact Us</h2>
+            <p>
+              <span style={{ color: "#fff" }}>Hotline: </span> 019348989,
+              0173489992, 0192394838
+            </p>
+            <HotlineSocials>
+              <Social>
+                <FeatherIcon icon={"life-buoy"} />
+                <span>Discord</span>
+              </Social>
+              <Social>
+                <FeatherIcon icon={"facebook"} />
+                <span>Facebook</span>
+              </Social>
+              <Social href="/me">
+                <FeatherIcon icon={"mail"} />
+                <span>Discord</span>
+              </Social>
+            </HotlineSocials>
+          </HotlineItem>
+          <DeveloperItem>
+            <h4>This site is design & developed By </h4>
+            <img src={developerImg} alt="developer-img" />
+            <h6>Jamatul Talukder</h6>
+          </DeveloperItem>
+        </Top>
+        <Bottom>
+          <Copyright>
+            © CSE CLUB Presents It Carnival 2023. All rights reserved.
+          </Copyright>
+        </Bottom>
+      </Wrapper>
     </Element>
   );
 }

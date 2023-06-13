@@ -1,5 +1,5 @@
 .events {
-  padding: 10rem 5rem;
+  padding: 17rem 5rem;
 
   background: linear-gradient(90deg, #405efb, #a551ad);
 }
@@ -26,8 +26,8 @@
   position: relative;
   width: 100%;
   transform: opacity 700ms;
-  background: white;
   border-radius: 0.5rem;
+  border: 2px solid rgb(40, 40, 40);
 }
 
 .card:hover::before {
@@ -176,7 +176,7 @@ i {
 }
 @media (max-width: 700px) {
   .events {
-    padding: 7rem 3rem;
+    padding: 13rem 3rem;
   }
   .cards {
     width: 100%;
@@ -185,8 +185,7 @@ i {
 
 @media (max-width: 400px) {
   .events {
-    padding: 5rem 1rem;
-    background: #3f5efb;
+    padding: 13rem 1rem;
   }
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

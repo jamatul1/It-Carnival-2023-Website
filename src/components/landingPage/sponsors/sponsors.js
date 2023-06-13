@@ -6,9 +6,10 @@ import { textRevealVariant } from "../../animation/textReveal";
 import { useInView } from "react-intersection-observer";
 import ObjectReveal from "../../animation/objectReveal";
 import { at } from "../../../utils/queryHelpers";
+import { WrapperStyles } from "../styles";
 
 const Element = styled.section`
-  padding: 10rem 0;
+  ${WrapperStyles}
 `;
 const SponsorsWrapper = styled.div`
   display: grid;

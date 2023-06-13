@@ -16,7 +16,7 @@ ${at(500, `font-size: 3.6rem;`)}
 
 const Counter = styled(motion.h2)`
   font-size: 10.2rem;
-  color: ${(p) => (p.$black ? p.theme.tc : p.theme.wc)};
+  color: ${(p) => (p.$black ? "#fff" : "#fff")};
   text-align: center;
   line-height: 1;
   font-weight: 700;

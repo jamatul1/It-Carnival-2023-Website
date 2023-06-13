@@ -3,10 +3,11 @@ import { styled } from "styled-components";
 import MagicalText from "../magicalText/magicalText";
 import FireWorks from "../firework/firework";
 import ParticleText from "../particleText/particleText";
-import { at } from "../../utils/queryHelpers";
+import { at, fCenter } from "../../utils/queryHelpers";
 import ScrollDownLogo from "../scrollDownLogo/scrollDownLogo";
 import { motion } from "framer-motion";
-
+import { Link } from "feather-icons-react/build/IconComponents";
+import VivasoftImg from "../../imgs/icons/herologo.png";
 const FireworkWrapper = styled.div`
   position: absolute;
   z-index: 10000;
@@ -51,7 +52,7 @@ const Subtitle = styled(motion.h4)`
   position: absolute;
   line-height: 1.2;
   color: #f4f4f4;
-  top: 40%;
+  top: 42%;
   ${at(825, `top: 38%; font-size: 1.8rem;`)}
   ${at(572, `top: 30%; font-size: 1.6rem;`)}
  
@@ -70,10 +71,38 @@ const ScrollDownWrapper = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 20%;
+  bottom: 2%;
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const SponsorsWrapper = styled.div`
+  position: absolute;
+  top: 60%;
+  ${fCenter()}
+  gap:2rem;
+  flex-direction: column;
+  width: 100%;
+`;
+const STitle = styled(motion.h5)`
+  font-size: 1.6rem;
+  font-weight: 700;
+`;
+const Sponsors = styled(motion.div)`
+  ${fCenter()}
+  width:300px;
+  gap: 2rem;
+  flex-wrap: wrap;
+  ${at(600, `gap:1rem;`)}
+`;
+const Sponsor = styled.div`
+  img {
+    height: 5.2rem;
+    width: 5.2rem;
+    border-radius: 50%;
+    ${at(600, `height:3.6rem;width:3.6rem;`)}
+  }
 `;
 export default function Showcase() {
   return (
@@ -95,7 +124,47 @@ export default function Showcase() {
           <span>Presents</span>{" "}
         </Subtitle>
         <ParticleText />
-
+        <SponsorsWrapper>
+          <STitle
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.5,
+              ease: "easeIn",
+            }}
+          >
+            Sponsored By :
+          </STitle>
+          <Sponsors
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.5,
+              ease: "easeIn",
+            }}
+          >
+            <Sponsor>
+              <img src={VivasoftImg} alt="sponsor" />
+            </Sponsor>
+            <Sponsor>
+              <img src={VivasoftImg} alt="sponsor" />
+            </Sponsor>
+            <Sponsor>
+              <img src={VivasoftImg} alt="sponsor" />
+            </Sponsor>
+            <Sponsor>
+              <img src={VivasoftImg} alt="sponsor" />
+            </Sponsor>
+            <Sponsor>
+              <img src={VivasoftImg} alt="sponsor" />
+            </Sponsor>
+            <Sponsor>
+              <img src={VivasoftImg} alt="sponsor" />
+            </Sponsor>
+          </Sponsors>
+        </SponsorsWrapper>
         <ScrollDownWrapper>
           <ScrollDownLogo />
         </ScrollDownWrapper>

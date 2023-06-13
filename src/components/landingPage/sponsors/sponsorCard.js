@@ -6,7 +6,7 @@ import {
   textRevealVariant,
 } from "../../animation/textReveal";
 import { useInView } from "react-intersection-observer";
-
+import sponsorLogo from "../../../imgs/icons/sponsorlogo.png";
 const Card = styled.div`
   padding: 5rem 2rem;
   display: flex;
@@ -24,8 +24,6 @@ const SponsorName = styled(motion.h6)`
   font-size: 1.6rem;
   font-weight: 600;
   color: ${(p) => p.theme.lgc};
-  cursor: pointer;
-  ${textRevealStyles}
 `;
 
 export default function SponsorCard() {
@@ -34,23 +32,8 @@ export default function SponsorCard() {
   });
   return (
     <Card ref={visiRef}>
-      <Logo
-        src="https://i.pinimg.com/236x/6c/98/46/6c9846b7d091999f1b5f4db18436856f.jpg"
-        alt="logo"
-      />
-      <SponsorName
-        ref={visiRef}
-        variants={textRevealVariant}
-        initial="initial"
-        animate={inView ? "animate" : "initial"}
-        transition={{
-          delay: 0.5,
-          duration: 0.5,
-          ease: "linear",
-        }}
-      >
-        Vivasoft
-      </SponsorName>
+      <Logo src={sponsorLogo} alt="logo" />
+      <SponsorName>Sponsor</SponsorName>
     </Card>
   );
 }

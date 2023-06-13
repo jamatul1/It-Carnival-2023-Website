@@ -10,6 +10,7 @@ import { styled } from "styled-components";
 
 import { useInView } from "react-intersection-observer";
 import { at } from "../../utils/queryHelpers";
+import { WrapperStyles } from "../landingPage/styles";
 const styles = [
   {
     background: "#fff",
@@ -27,8 +28,7 @@ const icons = ["hour", "play", "view"];
 // };
 
 const Element = styled.div`
-  padding: 5rem 0;
-  padding-bottom: 10rem;
+  ${WrapperStyles}
   background: ${(p) => p.theme.gd2};
 `;
 const SponsorsWrapper = styled.div`

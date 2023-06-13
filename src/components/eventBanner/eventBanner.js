@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import { at, fCenter } from "../../utils/queryHelpers";
 import awardIcon from "../../imgs/icons/award.png";
 import scheduleIcon from "../../imgs/icons/schedule.png";
-import vivasoftIcon from "../../imgs/icons/vivasoft.jpg";
+import vivasoftIcon from "../../imgs/icons/herologo.png";
 import { WhiteButton } from "../btn/btn";
 
 const Element = styled.div`
@@ -56,7 +56,7 @@ const TextTop = styled.div`
 
 const SponsorLabel = styled.div`
   ${fCenter()}
-  1rem;
+  margin-bottom: 1rem;
   gap: 2rem;
   span {
     color: white;
@@ -66,8 +66,8 @@ const SponsorLabel = styled.div`
 const SponsorItem = styled.a`
   ${fCenter()}
   img {
-    height: 2rem;
-    width: 2rem;
+    height: 3.2rem;
+    width: 3.2rem;
     border-radius: 50%;
   }
   span {
@@ -110,11 +110,11 @@ export default function EventBanner() {
           <SponsorLabel>
             <SponsorItem>
               <img src={vivasoftIcon} alt="sponsor img" />
-              <span>Vivasoft</span>
+              <span>Sponsor-1</span>
             </SponsorItem>
             <SponsorItem>
               <img src={vivasoftIcon} alt="sponsor img" />
-              <span>Robi</span>
+              <span>Sponsor-2</span>
             </SponsorItem>
             <span>Presents</span>
           </SponsorLabel>

@@ -14,19 +14,18 @@ import osImgUrl from "../imgs/icons/os.png";
 import period_timeImgUrl from "../imgs/icons/period-time.png";
 import sigmaImgUrl from "../imgs/icons/sigma.png";
 import translatorImgUrl from "../imgs/icons/translator.png";
+import Description from "../components/landingPage/description";
+import Sponsors from "../components/landingPage/sponsors/sponsors";
 const DescriptionWrapper = styled.section`
   padding: 10rem 2rem;
   text-align: center;
   background: rgb(63, 94, 251);
   color: white;
 `;
-const Description = styled.p`
-  font-size: 2rem;
-  line-height: 1.5;
-`;
 
 const SummeryWrapper = styled.section`
-  padding: 10rem 2rem;
+  padding: 15rem 2rem;
+  border-top: 1px solid white;
 `;
 const Summeries = styled.ul`
   list-style: none;
@@ -49,10 +48,12 @@ const SItemLeft = styled.div`
   span {
     font-weight: 700;
     font-size: 2rem;
+    color: white;
   }
 `;
 const SItemRight = styled.span`
   font-size: 2rem;
+  color: white;
 `;
 const EventScheduleWrapper = styled.section``;
 
@@ -71,8 +72,7 @@ ${at(500, `font-size: 3.6rem; `)}
 `;
 
 const RulesWrapper = styled.section`
-  border-bottom: 1px solid #cbcbcb;
-  padding: 10rem 0 8rem 0;
+  padding: 14rem 0 12rem 0;
   background: #3f5efb2b;
 `;
 
@@ -101,16 +101,8 @@ export default function EventTemplate({ data: { markdownRemark } }) {
   return (
     <Layout>
       <EventBanner />
-      <DescriptionWrapper>
-        <Heading>Description</Heading>
-        <Description>
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don't look even slightly believable.
-          If you are going to use a passage of Lorem Ipsum, you need to be sure
-          there isn't anything embarrassing hidden in the middle of text.
-        </Description>
-      </DescriptionWrapper>
+      <Description />
+
       <SummeryWrapper>
         <Heading>Summery</Heading>
         <Summeries>
@@ -193,6 +185,8 @@ export default function EventTemplate({ data: { markdownRemark } }) {
           </RuleListItem>
         </RulesList>
       </RulesWrapper>
+      <Sponsors />
+      <hr />
     </Layout>
   );
 }

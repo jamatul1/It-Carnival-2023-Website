@@ -12,7 +12,7 @@ const Element = styled(motion.header)`
   width: 100vw;
   top: 0;
   z-index: 100000;
-  background: linear-gradient(to right, #3f5efb, #fc466b);
+  // background: linear-gradient(to right, #3f5efb, #fc466b);
 `;
 const Wrapper = styled.div`
   height: 6.5rem;
