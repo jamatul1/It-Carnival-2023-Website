@@ -119,6 +119,9 @@ const DescriptionContainer = styled.article`
   ul {
     margin-bottom: 3rem;
   }
+  ol {
+    padding-left: 5rem;
+  }
   a {
     line-break: anywhere;
     color: white;

@@ -84,3 +84,7 @@ The PSTU Inter University Programming Contest allows university students to put 
 8. Windows 11 as operating system
 9. Compiler GCC 12.2.0
 10. IDE ( codeblocks 20.3)
+
+## Any Queries (Helpline)
+
+🧑‍💼 Event Coordinator: 01742059121 - Rony Mir

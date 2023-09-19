@@ -107,21 +107,28 @@ export default function Footer() {
           <HotlineItem>
             <h2 style={{ fontWeight: 400 }}>Contact Us</h2>
             <p>
-              <span style={{ color: "#fff" }}>Hotline: </span> 019348989,
-              0173489992, 0192394838
+              <span style={{ color: "#fff" }}>Hotline: </span> 01301479582,
+              01738-883211, 01742059121
+            </p>
+            <p>
+              <span style={{ color: "#fff" }}>Email: </span>{" "}
+              cseclub@cse.pstu.ac.bd
             </p>
             <HotlineSocials>
               <Social>
                 <FeatherIcon icon={"life-buoy"} />
                 <span>Discord</span>
               </Social>
-              <Social>
+              <Social
+                href="https://www.facebook.com/CSEClubPSTU"
+                target="_blank"
+              >
                 <FeatherIcon icon={"facebook"} />
                 <span>Facebook</span>
               </Social>
               <Social href="/me">
                 <FeatherIcon icon={"mail"} />
-                <span>Discord</span>
+                <span>Email</span>
               </Social>
             </HotlineSocials>
           </HotlineItem>

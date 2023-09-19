@@ -95,6 +95,10 @@ The Project Showcase is open to all Computer Science and Engineering (CSE) stude
 3.  The decision of the judges will be final
 4.  Duration (1.5 hours)
 
+## Any Queries (Helpline)
+
+🧑‍💼 Event Coordinator: 01738-883211 - Shahriar Tarit
+
 ## Prize Pool: Total 2000 BDT!
 
 # FIFA
@@ -136,6 +140,10 @@ Attention all Fifa Players, it's time to lace up your virtual boots and prepare 
 
 Join us for a day of thrilling matches, intense rivalries, and unforgettable moments as we celebrate the beautiful game in digital form. Whether you're a casual player or a seasoned FIFA pro, this competition is your chance to prove your skills and earn the title of FIFA 22 Champion!
 
+## Any Queries (Helpline)
+
+🧑‍💼 Event Coordinator: 01829545828 - Sayem Mohammad Sumon
+
 ## Prize Pool: Total 2500 BDT!
 
 # 𝗖𝗵𝗲𝘀𝘀 𝗧𝗼𝘂𝗿𝗻𝗮𝗺𝗲𝗻𝘁
@@ -160,8 +168,11 @@ Get ready for an exhilarating real-time Chess Tournament that will put your stra
 Players are divided into groups and play each other once in a round-robin format. From there, certain players will advance to the second round, and at the end of the second round, the semi-finals will be held, then the final.  
  Both players must complete each game in a total of 30 minutes.
 
-1. Prize Pool:
-2. Total 2500 BDT!
+## Any Queries (Helpline)
+
+🧑‍💼 Event Coordinator: 01704-000624 - Mahfuz Amin
+
+## Prize Pool: Total 2500 BDT!
 
 # 𝗥𝘂𝗯𝗶𝗸'𝘀 𝗖𝘂𝗯𝗲 𝗦𝗼𝗹𝘃𝗶𝗻𝗴 Challenge
 
@@ -184,5 +195,9 @@ Are you up for the ultimate Rubik's Cube-solving challenge? Get ready to twist a
 
 In round 1, each contestant will be given a chance to solve the cube 3 times. From there, a certain number of contestants will advance to the next round based on the average time.
 In the second round also, the cube will be solved 3 times in the same way and from there the result will be determined based on the average time.
+
+## Any Queries (Helpline)
+
+🧑‍💼 Event Coordinator: 01704-000624 - Mahfuz Amin
 
 ## Prize Pool: Total 2000 BDT!

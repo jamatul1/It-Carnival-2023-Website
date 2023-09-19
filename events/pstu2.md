@@ -98,6 +98,10 @@ Gear up for the ultimate battle royale showdown in the PSTU IT Carnival's PUBG: 
 
 N.B:If there is any delay, the team will be responsible. Late team cancellations from that round will be counted and the entry fee is not refundable in this case.
 
+## Any Queries (Helpline)
+
+🧑‍💼 Event Coordinator: 01684020044 - Tamzid Islan Tonmoy
+
 ## Prize Pool: Total 3500 BDT!
 
 # LUDO
@@ -120,8 +124,12 @@ It's time to roll the dice, make strategic moves, and compete in the ultimate LU
 ## Rules & Regulations
 
 The game will be played on the Ludo board in a round-by-round 1 vs 1 system.
-Prize Pool:
-Total 1500 BDT!
+
+## Any Queries (Helpline)
+
+🧑‍💼 Event Coordinator: 01763461723 - Rakib Al Hasan
+
+## Prize Pool: Total 1500 BDT!
 
 # Poster Designing (Only CSE)
 
@@ -147,6 +155,10 @@ Individual participation is allowed.
 
 On a specific topic, you need to design the poster on your own device.
 
+## Any Queries (Helpline)
+
+🧑‍💼 Event Coordinator: 01952318902 - Sumit Sikder
+
 ## Prize Pool: Total 1500 BDT!
 
 # IT Quiz Competition
@@ -168,5 +180,9 @@ Get ready to test your knowledge, quick thinking, and problem-solving skills in 
 
 There will be 30 MCQs related to technology revolution and technology.
 The time: 20 minutes.
+
+## Any Queries (Helpline)
+
+🧑‍💼 Event Coordinator: 01626982180 - Sk Rakib
 
 ## Prize Pool: Total 1500 BDT!

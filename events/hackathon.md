@@ -59,10 +59,10 @@ Calling all developers, designers, entrepreneurs, and tech enthusiasts! Get read
 
 ## Registration
 
-1. Registration link: https://forms.gle/ScCG6quEMcbtP8mK6
-2. Registration Fee: 250 tk
-3. Contest link: https://www.hackverse.dev/hackathons/pstu-it-carnival-hackathon-2023
-4. Payment Deadline: 23 th September, 11:59 PM
+1.  Registration link: https://forms.gle/ScCG6quEMcbtP8mK6
+2.  Registration Fee: 250 tk
+3.  Contest link: https://www.hackverse.dev/hackathons/pstu-it-carnival-hackathon-2023
+4.  Payment Deadline: 23 th September, 11:59 PM
 
 ### 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝘀𝘂𝗯𝗺𝗶𝘀𝘀𝗶𝗼𝗻𝘀 𝗱𝗲𝗮𝗱𝗹𝗶𝗻𝗲: 23 September, 12:00Am
 
@@ -81,3 +81,7 @@ Calling all developers, designers, entrepreneurs, and tech enthusiasts! Get read
 4. 𝑺𝒕𝒆𝒑 1️. 𝑹𝒆𝒈𝒊𝒔𝒕𝒆𝒓: Head over to https://www.hackverse.dev/ and get your team registered. Create your dream team and join the PSTU Hackathon.
 5. 𝑺𝒕𝒆𝒑 2. 𝑷𝒓𝒐𝒋𝒆𝒄𝒕 𝑺𝒖𝒃𝒎𝒊𝒔𝒔𝒊𝒐𝒏: Teams are required to upload a short demo video showcasing their brilliant project. Make sure to follow the guidelines provided on the Hackverse website.
 6. 𝑺𝒕𝒆𝒑 3. 𝑪𝒐𝒏𝒇𝒊𝒓𝒎 𝒚𝒐𝒖𝒓 𝒑𝒂𝒚𝒎𝒆𝒏𝒕: https://shorturl.at/zAIJS
+
+## Any Queries (Helpline)
+
+Event Coordinator: 01301479582 (Fazle Rabbe Bipul)
