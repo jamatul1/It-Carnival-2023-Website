@@ -6,7 +6,8 @@ import Nav from "../nav/nav";
 import { at } from "../../utils/queryHelpers";
 import { Button } from "../btn/btn";
 import { motion } from "framer-motion";
-
+import logo from "../../imgs/icons/logo_w.png";
+import { Link } from "gatsby";
 const Element = styled(motion.header)`
   position: fixed;
   width: 100vw;
@@ -24,11 +25,19 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 2rem;
   ${at(470, `gap: 1rem`)}
+  a {
+    text-decoration: none;
+  }
 `;
 const Logo = styled.div`
   font-weight: 700;
   color: white;
   ${at(800, `flex-grow:1;`)};
+  img {
+    height: 42px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
 `;
 
 const NavWrapper = styled.div`
@@ -72,20 +81,28 @@ const headerVariant = {
     },
   },
 };
-export default function Header() {
+export default function Header({ formLink }) {
   return (
     <Element variants={headerVariant} initial={"initial"} animate={"animate"}>
       <Wrapper>
-        <Logo>Logo here</Logo>
+        <Logo>
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
+        </Logo>
         <NavWrapper>
           <Nav />
         </NavWrapper>
         {/* <RegiBtn>
           <FeatherIcon size={16} icon="clipboard" /> Registration
         </RegiBtn> */}
-        <Button>
-          <FeatherIcon size={18} icon="git-merge"></FeatherIcon> Register
-        </Button>
+        {formLink && (
+          <a href={formLink}>
+            <Button>
+              <FeatherIcon size={18} icon="git-merge"></FeatherIcon> Register
+            </Button>
+          </a>
+        )}
       </Wrapper>
     </Element>
   );

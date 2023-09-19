@@ -10,8 +10,8 @@ export const textRevealVariant = {
 export const textRevealStyles = `
 background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 1) 25%,
-    rgba(255, 255, 255, 0) 50%
+    rgba(255, 255, 255, 1) 25%,
+    rgba(0, 0, 0, 0) 50%
   );
   background-size: 300%;
   background-position: 100%;

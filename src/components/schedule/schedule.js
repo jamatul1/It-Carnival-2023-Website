@@ -13,7 +13,7 @@ import { at } from "../../utils/queryHelpers";
 import { WrapperStyles } from "../landingPage/styles";
 const styles = [
   {
-    background: "#fff",
+    background: "transparent",
     color: "#535353",
 
     borderRadius: 10,
@@ -28,8 +28,18 @@ const icons = ["hour", "play", "view"];
 // };
 
 const Element = styled.div`
-  ${WrapperStyles}
-  background: ${(p) => p.theme.gd2};
+  ${WrapperStyles}// background: ${(p) => p.theme.gd2};
+  // background: #de6161; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(
+  //   to right,
+  //   #2657eb,
+  //   #de6161
+  // ); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(
+  //   to right,
+  //   #2657eb,
+  //   #de6161
+  // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 `;
 const SponsorsWrapper = styled.div`
   width: 60%;
@@ -64,30 +74,24 @@ export default function Schedule({ schedules = [], withHeading = true }) {
                     contentArrowStyle={{
                       borderRight: "7px solid  #fff",
                     }}
-                    icon={
-                      <img
-                        src="https://img.fortawesome.com/1ce05b4b/start-illustration.svg"
-                        height={24}
-                        width={24}
-                      />
-                    }
+                    icon={<h1 style={{ margin: 0 }}>*</h1>}
                     iconStyle={{
-                      background: "#fff",
+                      background: "rgb(60 49 155)",
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
                     }}
                   >
                     <h2
-                      style={{ fontSize: 24, lineHeight: 1.2 }}
+                      style={{ fontSize: 24, lineHeight: 1.2, color: "#fff" }}
                       className="vertical-timeline-element-title"
                     >
-                      {s.title}
+                      {s.details}
                     </h2>
                     <h3 className="vertical-timeline-element-subtitle">
-                      {s.time}
+                      {s.title} {" " + s.time}
                     </h3>
-                    <p>{s.details} </p>
+                    {/* <p>{s.details} </p> */}
                   </VerticalTimelineElement>
                 );
               })}

@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
 import { at, fCenter } from "../../utils/queryHelpers";
+import { motion } from "framer-motion";
 
-export const Button = styled.button`
+export const Button = styled(motion.button)`
 font-weight:600;
 background-color: #3f5efb;
 color: #fff;

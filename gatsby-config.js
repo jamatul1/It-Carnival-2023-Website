@@ -3,7 +3,8 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `cse_club_it_carnival`,
+    title: `PSTU It carnival 2023`,
+    description: "PSTU It carnival 2023 is the largest ",
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
@@ -39,8 +40,8 @@ module.exports = {
         ],
         web: [
           {
-            name: `Source Sans Pro`,
-            file: `https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap`,
+            name: `Inter`,
+            file: `https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap`,
           },
         ],
       },

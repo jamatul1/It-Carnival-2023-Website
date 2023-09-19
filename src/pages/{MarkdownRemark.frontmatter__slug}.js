@@ -16,6 +16,9 @@ import sigmaImgUrl from "../imgs/icons/sigma.png";
 import translatorImgUrl from "../imgs/icons/translator.png";
 import Description from "../components/landingPage/description";
 import Sponsors from "../components/landingPage/sponsors/sponsors";
+import HeadingSecondary from "../components/global/typography";
+import { WrapperStyles } from "../components/landingPage/styles";
+import parse from "html-react-parser";
 const DescriptionWrapper = styled.section`
   padding: 10rem 2rem;
   text-align: center;
@@ -25,7 +28,6 @@ const DescriptionWrapper = styled.section`
 
 const SummeryWrapper = styled.section`
   padding: 15rem 2rem;
-  border-top: 1px solid white;
 `;
 const Summeries = styled.ul`
   list-style: none;
@@ -78,18 +80,58 @@ const RulesWrapper = styled.section`
 
 const RulesList = styled.ol`
   padding: 1rem 5rem;
+  margin-top: 50px;
   width: 60%;
   ${at(1200, `width: 70%;`)}
-  ${at(900, `width: 80%; padding:1rem;`)}
+  ${at(900, `width: 80%; padding:2rem;`)}
   // ${at(600, `width: 100%; padding:2rem; text-align:center;`)}
 margin:auto;
 `;
 const RuleListItem = styled.li`
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
+
+  ${at(900, `font-size:2rem;`)}
+  ${at(500, `font-size:1.8rem;`)}
+`;
+
+const DescriptionContainer = styled.article`
+  width: 50%;
+  margin: 0 auto;
+  ${WrapperStyles}
+
+  line-height:1.7;
+  font-size: 2rem;
+  ${at(900, `width:70%;font-size:1.8rem;`)}
+  ${at(500, `width:80%;font-size:1.8rem;`)}
+  h1 {
+    margin-top: 20rem;
+    font-size: 4.2rem;
+  }
+  h2 {
+    margin-bottom: 1rem;
+  }
+  p {
+    text-align: center;
+  }
+  p,
+  ol,
+  ul {
+    margin-bottom: 3rem;
+  }
+  a {
+    line-break: anywhere;
+    color: white;
+  }
 `;
 
 export default function EventTemplate({ data: { markdownRemark } }) {
+  React.useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
+  }, []);
   const { frontmatter, html } = markdownRemark;
   let coverImg = getImage(
     markdownRemark.frontmatter.coverImg?.childImageSharp?.gatsbyImageData
@@ -97,96 +139,36 @@ export default function EventTemplate({ data: { markdownRemark } }) {
   let prizeImg = getImage(
     markdownRemark.frontmatter.prizeImg?.childImageSharp?.gatsbyImageData
   );
-  let summery = markdownRemark.frontmatter.summery;
-  return (
-    <Layout>
-      <EventBanner />
-      <Description />
+  let { deadline, fee, formLink, prizePool, rules, schedules, title } =
+    frontmatter;
 
-      <SummeryWrapper>
-        <Heading>Summery</Heading>
-        <Summeries>
-          <SItem>
-            <SItemLeft>
-              <img src={period_timeImgUrl} alt="img" />
-              <span>Duration :</span>
-            </SItemLeft>
-            <SItemRight>5 Hours</SItemRight>
-          </SItem>
-          <SItem>
-            <SItemLeft>
-              <img src={boxImgUrl} alt="img" />
-              <span>Team Size :</span>
-            </SItemLeft>
-            <SItemRight>3 Members</SItemRight>
-          </SItem>
-          <SItem>
-            <SItemLeft>
-              <img src={feeImgUrl} alt="img" />
-              <span>Registration Fees :</span>
-            </SItemLeft>
-            <SItemRight>450 tk</SItemRight>
-          </SItem>
-          <SItem>
-            <SItemLeft>
-              <img src={osImgUrl} alt="img" />
-              <span>Os :</span>
-            </SItemLeft>
-            <SItemRight>Windows</SItemRight>
-          </SItem>
-          <SItem>
-            <SItemLeft>
-              <img src={translatorImgUrl} alt="img" />
-              <span>Languages :</span>
-            </SItemLeft>
-            <SItemRight>Javascript</SItemRight>
-          </SItem>
-        </Summeries>
-      </SummeryWrapper>
-      <EventScheduleWrapper>
-        <Schedule
-          schedules={[
-            {
-              title: "27 January 2023, 10:30 AM",
-              time: "UPC Team Reporting, Registration, Kit Collection",
-            },
-            {
-              title: "27 January 2023, 10:30 AM",
-              time: "UPC Team Reporting, Registration, Kit Collection",
-            },
-            {
-              title: "27 January 2023, 10:30 AM",
-              time: "UPC Team Reporting, Registration, Kit Collection",
-            },
-            {
-              title: "27 January 2023, 10:30 AM",
-              time: "UPC Team Reporting, Registration, Kit Collection",
-            },
-          ]}
-        ></Schedule>
-      </EventScheduleWrapper>
-      <RulesWrapper>
-        <Heading>Rules</Heading>
-        <RulesList>
-          <RuleListItem>
-            {" "}
-            Solutions to problems submitted for judging are called runs. Each
-            run is judged as accepted or rejected by the judge, and the team is
-            notified of the result. Only source code should be submitted, not
-            the executables or any other files.
-          </RuleListItem>
-          <RuleListItem> You need to put your arm on shoulder</RuleListItem>
-          <RuleListItem>
-            {" "}
-            Solutions to problems submitted for judging are called runs. Each
-            run is judged as accepted or rejected by the judge, and the team is
-            notified of the result. Only source code should be submitted, not
-            the executables or any other files.
-          </RuleListItem>
-        </RulesList>
-      </RulesWrapper>
+  return (
+    <Layout formLink={formLink}>
+      <EventBanner
+        title={title}
+        deadline={deadline}
+        fee={fee}
+        formLink={formLink}
+        prizePool={prizePool}
+      />
+      <DescriptionContainer>
+        <HeadingSecondary counter={2}>Description</HeadingSecondary>
+        {parse(html)}
+      </DescriptionContainer>
       <Sponsors />
-      <hr />
+      <EventScheduleWrapper data-scroll data-scroll-speed="0.1">
+        <Schedule schedules={schedules}></Schedule>
+      </EventScheduleWrapper>
+      {rules.length !== 0 && (
+        <RulesWrapper data-scroll data-scroll-speed="0.2">
+          <HeadingSecondary counter={5}>Rules</HeadingSecondary>
+          <RulesList>
+            {rules.map((r, i) => (
+              <RuleListItem>{r}</RuleListItem>
+            ))}
+          </RulesList>
+        </RulesWrapper>
+      )}
     </Layout>
   );
 }
@@ -196,20 +178,18 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         title
-        summery {
+        deadline
+        fee
+        prizePool
+        formLink
+        schedules {
+          details
+          time
           title
-          items {
-            key
-            value
-          }
         }
-        coverImg {
-          childImageSharp {
-            gatsbyImageData(width: 1000)
-          }
-        }
+        slug
+        rules
       }
     }
   }

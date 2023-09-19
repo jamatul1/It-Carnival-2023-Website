@@ -16,7 +16,7 @@ const Item = styled(motion.li)``;
 const ItemLink = styled(Link)`
   text-decoration: none;
   color: ${(p) => p.theme.wc};
-  font-weight: 600;
+  font-weight: 400;
 `;
 const ListVariant = {
   initial: {
@@ -51,21 +51,11 @@ function NavLg() {
   return (
     <Element>
       <List variants={ListVariant} initial={"initial"} animate={"animate"}>
-        <Item variants={ItemVariant}>
-          <ItemLink to="#">IUPC</ItemLink>
-        </Item>
-        <Item variants={ItemVariant}>
-          <ItemLink to="#">Hackathons</ItemLink>
-        </Item>
-        <Item variants={ItemVariant}>
-          <ItemLink to="#">Volarent</ItemLink>
-        </Item>
-        <Item variants={ItemVariant}>
-          <ItemLink to="#">Fifa</ItemLink>
-        </Item>
-        <Item variants={ItemVariant}>
-          <ItemLink to="#">PSTU Gaming</ItemLink>
-        </Item>
+        {navItems.map((n, i) => (
+          <Item key={i} variants={ItemVariant}>
+            <ItemLink to={n.link}>{n.label}</ItemLink>
+          </Item>
+        ))}
       </List>
     </Element>
   );
@@ -137,7 +127,12 @@ const SmListVariant = {
     },
   },
 };
-
+let navItems = [
+  { label: "IUPC", link: "/events/iupc" },
+  { label: "Hackathon", link: "/events/hackathon" },
+  { label: "PSTU Intra  1", link: "/events/pstu-1" },
+  { label: "PSTU Intra  2", link: "/events/pstu-2" },
+];
 function NavSm() {
   const [open, setOpen] = useState(false);
   function handleToggle() {
@@ -169,21 +164,11 @@ function NavSm() {
             initial={"initial"}
             animate={"animate"}
           >
-            <Item variants={ItemVariant}>
-              <SmItemLink to="#">IUPC</SmItemLink>
-            </Item>
-            <Item variants={ItemVariant}>
-              <SmItemLink to="#">Hackathons</SmItemLink>
-            </Item>
-            <Item variants={ItemVariant}>
-              <SmItemLink to="#">Volarent</SmItemLink>
-            </Item>
-            <Item variants={ItemVariant}>
-              <SmItemLink to="#">Fifa</SmItemLink>
-            </Item>
-            <Item variants={ItemVariant}>
-              <SmItemLink to="#">PSTU Gaming</SmItemLink>
-            </Item>
+            {navItems.map((n, i) => (
+              <Item key={i} variants={ItemVariant}>
+                <SmItemLink to={n.link}>{n.label}</SmItemLink>
+              </Item>
+            ))}
           </NavSmList>
         </NavSmBackground>
       )}

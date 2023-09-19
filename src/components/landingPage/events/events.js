@@ -4,6 +4,9 @@ import HeadingSecondary from "../../global/typography";
 import { useInView } from "react-intersection-observer";
 import EventCard from "./eventCard";
 import ObjectReveal from "../../animation/objectReveal";
+import iupcImg from "../../../imgs/events/programming.png";
+import hackathonImg from "../../../imgs/events/hackathon.png";
+import pstuImg from "../../../imgs/events/pstu_challenges.png";
 
 const revealVariant = {
   initial: {
@@ -26,26 +29,23 @@ function configCards(container, items) {
     }
   };
 }
+
 export default function Events() {
   let cardsRef = useRef();
   let card1Ref = useRef();
   let card2Ref = useRef();
   let card3Ref = useRef();
   let card4Ref = useRef();
-  let card5Ref = useRef();
-  let card6Ref = useRef();
 
   const { ref: visiRef, inView } = useInView({ threshold: 1 });
 
   useEffect(() => {
-    configCards(cardsRef.current, [
-      card1Ref.current,
-      card2Ref.current,
-      card3Ref.current,
-      card4Ref.current,
-      card5Ref.current,
-      card6Ref.current,
-    ]);
+    // configCards(cardsRef.current, [
+    //   card1Ref.current,
+    //   card2Ref.current,
+    //   card3Ref.current,
+    //   card4Ref.current,
+    // ]);
   }, []);
   return (
     <div className={styles.events}>
@@ -57,17 +57,33 @@ export default function Events() {
         All The Events Under It Carnival 2023
       </HeadingSecondary>
       <div ref={cardsRef} className={styles.cards}>
-        <EventCard ref={card1Ref} />
+        <EventCard
+          title="Inter University Programming Contest"
+          src={iupcImg}
+          link={"/events/iupc"}
+          ref={card1Ref}
+        />
 
-        <EventCard ref={card2Ref} />
+        <EventCard
+          title="Hackathon"
+          src={hackathonImg}
+          link={"/events/hackathon"}
+          ref={card2Ref}
+        />
 
-        <EventCard ref={card3Ref} />
+        <EventCard
+          title="PSTU Intra - 1"
+          src={pstuImg}
+          link={"/events/pstu-1"}
+          ref={card3Ref}
+        />
 
-        <EventCard ref={card4Ref} />
-
-        <EventCard ref={card5Ref} />
-
-        <EventCard ref={card6Ref} />
+        <EventCard
+          title="PSTU Intra - 2"
+          src={pstuImg}
+          link={"/events/pstu-2"}
+          ref={card4Ref}
+        />
       </div>
     </div>
   );

@@ -3,8 +3,11 @@ import { styled } from "styled-components";
 import { at, fCenter } from "../../utils/queryHelpers";
 import awardIcon from "../../imgs/icons/award.png";
 import scheduleIcon from "../../imgs/icons/schedule.png";
-import vivasoftIcon from "../../imgs/icons/herologo.png";
-import { WhiteButton } from "../btn/btn";
+import feeIcon from "../../imgs/icons/fee.png";
+
+import { Button, WhiteButton } from "../btn/btn";
+import { motion } from "framer-motion";
+import { sponsors } from "../landingPage/sponsors/sponsors";
 
 const Element = styled.div`
   ${fCenter()}
@@ -12,22 +15,47 @@ const Element = styled.div`
   height: 100vh;
   //   width: 100vw;
   background: linear-gradient(to right, #3f5efb, #fc466b);
+  background: #ff00cc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff00cc,
+    #333399
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff00cc, #333399);
   color: #fff;
   padding: 2rem;
+  a {
+    text-decoration: none;
+  }
 `;
 
-const Title = styled.h1`
-  font-family: "Source Sans Pro";
+const Title = styled(motion.h1)`
+  text-transform: uppercase;
   font-style: normal;
   font-weight: 600;
-  font-size: 6.4rem;
+  font-size: 4.8rem;
   line-height: 0.8;
   text-align: center;
   letter-spacing: -0.045em;
-  text-transform: capitalize;
-  ${at(800, `font-size: 5.6rem; `)}
-  ${at(600, `font-size: 4.8rem;`)}
-${at(500, `font-size: 4.4rem; `)}
+
+  ${at(800, `font-size: 5.2rem; `)}
+  ${at(600, `font-size: 4.4rem;`)}
+${at(500, `font-size: 3.2rem; `)}
+  margin-top: 10px;
+  overflow: hidden;
+  span {
+    font: inherit;
+    margin-right: 5px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+  .mask {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+  }
 `;
 
 const TextsWrapper = styled.div`
@@ -41,7 +69,7 @@ const TextTitleWrapper = styled.div`
   flex-direction:column;
   ${at(800, `gap:.5rem; `)}
 `;
-const TextDetailsWrapper = styled.div`
+const TextDetailsWrapper = styled(motion.div)`
   ${fCenter()}
   flex-direction:column;
   gap: 1rem;
@@ -54,7 +82,7 @@ const TextTop = styled.div`
   gap: 2rem;
 `;
 
-const SponsorLabel = styled.div`
+const SponsorLabel = styled(motion.div)`
   ${fCenter()}
   margin-bottom: 1rem;
   gap: 2rem;
@@ -67,8 +95,9 @@ const SponsorItem = styled.a`
   ${fCenter()}
   img {
     height: 3.2rem;
-    width: 3.2rem;
-    border-radius: 50%;
+    width: 10.2rem;
+    border-radius: 5px;
+    object-fit: cover;
   }
   span {
     color: white;
@@ -91,53 +120,121 @@ const Line = styled.div`
     ${at(500, `width:2.8rem; height:2.8rem; `)}
   }
   h4 {
-    font-size: 3.2rem;
+    font-size: 2.4rem;
     line-height: 103.7%;
     /* or 33px */
     text-align: center;
     text-transform: capitalize;
     color: white;
-    ${at(800, `font-size: 3rem; `)}
-    ${at(600, `font-size: 2.8rem;`)}
-  ${at(500, `font-size: 2.4rem; `)}
+    ${at(800, `font-size: 2.8rem; `)}
+    ${at(600, `font-size: 2.4rem;`)}
+  ${at(500, `font-size: 2rem; `)}
   }
 `;
-export default function EventBanner() {
+
+const titleVariant = {
+  animate: {
+    transition: {
+      ease: "linear",
+      delayChildren: 0.4,
+      staggerChildren: 0.3,
+    },
+  },
+};
+const slideUp = {
+  initial: {
+    y: "200%",
+  },
+  animate: (i) => ({
+    y: "0%",
+  }),
+};
+
+const opacity = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: { duration: 2 },
+  },
+};
+
+export default function EventBanner({
+  title,
+  deadline,
+  fee,
+  formLink,
+  prizePool,
+}) {
   return (
     <Element>
       <TextsWrapper>
         <TextTitleWrapper>
-          <SponsorLabel>
-            <SponsorItem>
-              <img src={vivasoftIcon} alt="sponsor img" />
-              <span>Sponsor-1</span>
-            </SponsorItem>
-            <SponsorItem>
-              <img src={vivasoftIcon} alt="sponsor img" />
-              <span>Sponsor-2</span>
-            </SponsorItem>
+          <SponsorLabel
+            variants={opacity}
+            initial="initial"
+            animate="animate"
+            transition={{ easings: "linear" }}
+          >
+            {sponsors.map((s, i) => (
+              <SponsorItem>
+                <img src={s.src} alt="sponsor img" />
+              </SponsorItem>
+            ))}
+
             <span>Presents</span>
           </SponsorLabel>
-          <Title>Inter Universty Programming Contest</Title>
+          <Title variants={titleVariant} initial="initial" animate="animate">
+            {" "}
+            {title.split(" ").map((letters, i) => (
+              <span key={i} className={"mask"}>
+                <motion.span
+                  variants={slideUp}
+                  index={i}
+                  transition={{ easings: "linear" }}
+                  key={i}
+                >
+                  {letters}
+                </motion.span>
+              </span>
+            ))}
+          </Title>
         </TextTitleWrapper>
-        <TextDetailsWrapper>
+        <TextDetailsWrapper
+          variants={opacity}
+          initial="initial"
+          animate="animate"
+          transition={{ easings: "linear" }}
+        >
           <Line>
             <img src={awardIcon} alt="prize"></img>
-            <h4>Prize Money BDT 200k</h4>
+            <h4>Prize Pool : {prizePool}</h4>
           </Line>
           <Line>
             <img src={scheduleIcon} alt="deadline"></img>
-            <h4>Payment Deadline : 12 January 2023</h4>
+            <h4>Payment Deadline : {deadline}</h4>
+          </Line>
+          <Line>
+            <img src={feeIcon} alt="deadline"></img>
+            <h4>Fees : {fee}</h4>
           </Line>
         </TextDetailsWrapper>
       </TextsWrapper>
-      <WhiteButton
-        style={{
-          marginTop: 80,
-        }}
-      >
-        Join Our Discord Server!
-      </WhiteButton>
+      <a href={formLink}>
+        {" "}
+        <Button
+          style={{
+            marginTop: 80,
+          }}
+          variants={opacity}
+          initial="initial"
+          animate="animate"
+          transition={{ easings: "linear" }}
+        >
+          Register Now !
+        </Button>
+      </a>
     </Element>
   );
 }

@@ -1,17 +1,16 @@
 .events {
   padding: 17rem 5rem;
-
-  background: linear-gradient(90deg, #405efb, #a551ad);
 }
 .events > h2 {
   margin-bottom: 8rem;
 }
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
   gap: 2rem;
   width: 80%;
   margin: auto;
+  justify-items: center;
 }
 
 .cards:hover > .card::after {
@@ -21,15 +20,16 @@
 .card {
   cursor: pointer;
   display: flex;
-  height: 260px;
+  height: 500px;
   flex-direction: column;
   position: relative;
-  width: 100%;
+  width: 520px;
   transform: opacity 700ms;
   border-radius: 0.5rem;
-  border: 2px solid rgb(40, 40, 40);
 }
-
+a {
+  text-decoration: none;
+}
 .card:hover::before {
   opacity: 1;
   z-index: 100;
@@ -83,10 +83,12 @@
 h3,
 h4,
 span {
-  color: rgb(59, 59, 59);
+  color: rgb(228, 228, 228);
 
   font-weight: 400;
   margin: 0px;
+  line-height: 1.5;
+  line-break: anywhere;
 }
 
 .card-info-title {
@@ -102,12 +104,17 @@ i {
 }
 
 .card-image {
-  height: 160px;
-  margin: 10px 0px 0px 10px;
-  object-fit: scale-down;
-  overflow: hidden;
+  height: 300px;
+  width: 500px;
+  border: 2px solid rgb(210, 210, 210);
+  padding: 5px;
+  border-radius: 10px;
 }
-
+.card-image > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 /* .card-info-wrapper {
   align-items: center;
   display: flex;
@@ -121,6 +128,7 @@ i {
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 10px;
   padding: 10px;
 }
@@ -133,11 +141,11 @@ i {
 .cardInfoBtn {
   margin-top: 1rem;
   border: none;
-  background: #fc466b;
+  background: #1d89e1;
   font: inherit;
   color: rgb(235, 235, 235);
   display: flex;
-  font-weight: 600;
+  display: none;
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -148,11 +156,11 @@ i {
 }
 .card-info-title > h3 {
   font-size: 1.7em;
-  line-height: 20px;
+  line-height: 1.4;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 1) 25%,
-    rgba(255, 255, 255, 0) 50%
+    rgba(255, 255, 255, 1) 25%,
+    rgba(0, 0, 0, 0) 50%
   );
   background-size: 300%;
   background-position: 100%;
@@ -166,8 +174,8 @@ i {
   margin-top: 8px;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 1) 25%,
-    rgba(255, 255, 255, 0) 50%
+    rgba(255, 255, 255, 1) 25%,
+    rgba(0, 0, 0, 0) 50%
   );
   background-size: 300%;
   background-position: 100%;
@@ -181,14 +189,43 @@ i {
   .cards {
     width: 100%;
   }
+  .card {
+    height: 500px;
+    flex-direction: column;
+    position: relative;
+    width: 420px;
+  }
+  .card-image {
+    height: 300px;
+    width: 400px;
+    border: 2px solid rgb(210, 210, 210);
+    padding: 5px;
+  }
+  .card-image > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
-
-@media (max-width: 400px) {
+@media (hover: none) {
+  .cardInfoBtn {
+    display: flex;
+  }
+}
+@media (max-width: 550px) {
   .events {
     padding: 13rem 1rem;
   }
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .card {
+    height: 400px;
+    width: 320px;
+  }
+  .card-image {
+    height: 200px;
+    width: 300px;
   }
 }
 

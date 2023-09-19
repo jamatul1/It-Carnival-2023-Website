@@ -1,16 +1,17 @@
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import React from "react";
 import { styled } from "styled-components";
-import clubImg from "../../imgs/logo.jpg";
+import clubImg from "../../imgs/icons/logo.jpg";
 import developerImg from "../../imgs/me.png";
+import developer1Img from "../../imgs/tahsin.jpg";
 import { at, fCenter } from "../../utils/queryHelpers";
 
 const Element = styled.footer`
-  background: #303061;
+  background: #2b2b2b;
 `;
 
 const Wrapper = styled.div`
-  padding: 3rem;
+  padding: 10rem 3rem;
   width: 80%;
   margin: auto;
 `;
@@ -30,7 +31,7 @@ const ClubItem = styled.div`
   flex-direction:column;
   img {
     width: 10rem;
-    border-radius: 50%;
+    margin-bottom: 10px;
   }
   ${at(715, `margin:auto;`)}
 `;
@@ -52,12 +53,14 @@ const DeveloperItem = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   img {
     height: 6rem;
     width: 6rem;
     object-fit: cover;
     border-radius: 10rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
   h4 {
     color: #fff;
@@ -69,7 +72,7 @@ const DeveloperItem = styled.div`
 `;
 const Copyright = styled.p`
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 `;
 const HotlineSocials = styled.div`
   display: flex;
@@ -87,7 +90,7 @@ const Social = styled.a`
   align-items: center;
   gap: 0.5rem;
   span {
-    font-weight: 600;
+    font-weight: 400;
     color: #fff;
   }
 `;
@@ -99,10 +102,10 @@ export default function Footer() {
         <Top>
           <ClubItem>
             <img src={clubImg} alt="club img" />
-            <p>Patuakhali Science and Technology University Cse Club</p>
+            <p>CSE CLUB, PSTU</p>
           </ClubItem>
           <HotlineItem>
-            <h2>Contact Us</h2>
+            <h2 style={{ fontWeight: 400 }}>Contact Us</h2>
             <p>
               <span style={{ color: "#fff" }}>Hotline: </span> 019348989,
               0173489992, 0192394838
@@ -125,7 +128,16 @@ export default function Footer() {
           <DeveloperItem>
             <h4>This site is design & developed By </h4>
             <img src={developerImg} alt="developer-img" />
-            <h6>Jamatul Talukder</h6>
+            <h6 style={{ fontWeight: 400, margin: 0 }}>Jamatul Talukder</h6>
+            <p style={{ fontSize: 12, margin: 0 }}>
+              Instructor & Member @ CSE CLUB, PSTU
+            </p>
+          </DeveloperItem>
+          <DeveloperItem>
+            <h4>Data collection, Deploy and Tested By </h4>
+            <img src={developer1Img} alt="developer-img" />
+            <h6 style={{ fontWeight: 400, margin: 0 }}>Md Tahsin Amin</h6>
+            <p style={{ fontSize: 12, margin: 0 }}>Member @ CSE CLUB, PSTU</p>
           </DeveloperItem>
         </Top>
         <Bottom>
