@@ -7,6 +7,7 @@ import Description from "../components/landingPage/description";
 import Events from "../components/landingPage/events/events";
 import Schedule from "../components/schedule/schedule";
 import Sponsors from "../components/landingPage/sponsors/sponsors";
+import { SEO } from "../components/seo";
 
 const schedules = [
   {
@@ -121,4 +122,4 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>Home Page</title>;
+export const Head = () => <SEO />;

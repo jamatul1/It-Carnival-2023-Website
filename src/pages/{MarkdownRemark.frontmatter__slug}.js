@@ -19,6 +19,7 @@ import Sponsors from "../components/landingPage/sponsors/sponsors";
 import HeadingSecondary from "../components/global/typography";
 import { WrapperStyles } from "../components/landingPage/styles";
 import parse from "html-react-parser";
+import { SEO } from "../components/seo";
 const DescriptionWrapper = styled.section`
   padding: 10rem 2rem;
   text-align: center;
@@ -191,3 +192,4 @@ export const pageQuery = graphql`
     }
   }
 `;
+export const Head = () => <SEO />;

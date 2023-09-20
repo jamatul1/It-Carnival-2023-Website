@@ -43,9 +43,7 @@ const EventCard = React.forwardRef((props, ref) => {
               </motion.h4> */}
               </div>
 
-              <Link to={props.link}>
-                <button className={styles.cardInfoBtn}>View</button>
-              </Link>
+              <button className={styles.cardInfoBtn}>View</button>
             </div>
           </div>
         </div>

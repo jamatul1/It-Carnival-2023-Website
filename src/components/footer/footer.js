@@ -137,7 +137,7 @@ export default function Footer() {
             </HotlineSocials>
           </HotlineItem>
           <DeveloperItem>
-            <h4>This site is design & developed By </h4>
+            <h4>This site is Design & Developed By </h4>
             <img src={developerImg} alt="developer-img" />
             <h6 style={{ fontWeight: 400, margin: 0 }}>Jamatul Talukder</h6>
             <p style={{ fontSize: 12, margin: 0 }}>
@@ -145,7 +145,7 @@ export default function Footer() {
             </p>
           </DeveloperItem>
           <DeveloperItem>
-            <h4>Data collection, Deploy and Tested By </h4>
+            <h4>Data Collection, Testing, Deployment Done By </h4>
             <img src={developer1Img} alt="developer-img" />
             <h6 style={{ fontWeight: 400, margin: 0 }}>Md Tahsin Amin</h6>
             <p style={{ fontSize: 12, margin: 0 }}>Member @ CSE CLUB, PSTU</p>
