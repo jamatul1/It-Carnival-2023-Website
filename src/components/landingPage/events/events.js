@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 import EventCard from "./eventCard";
 import ObjectReveal from "../../animation/objectReveal";
 import iupcImg from "../../../imgs/events/programming.png";
-import hackathonImg from "../../../imgs/events/hackathon.png";
+import hackathonImg from "../../../imgs/events/hackathon.jpg";
 import pstuImg from "../../../imgs/events/pstu_challenges.png";
 
 const revealVariant = {
