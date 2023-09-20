@@ -38,8 +38,8 @@ const Title = styled(motion.h1)`
   text-align: center;
   letter-spacing: -0.045em;
 
-  ${at(800, `font-size: 5.2rem; `)}
-  ${at(600, `font-size: 4.4rem;`)}
+  ${at(1000, `font-size: 4.4rem; `)}
+  ${at(600, `font-size: 4rem;`)}
 ${at(500, `font-size: 3.2rem; `)}
   margin-top: 10px;
   overflow: hidden;
@@ -86,6 +86,8 @@ const SponsorLabel = styled(motion.div)`
   ${fCenter()}
   margin-bottom: 1rem;
   gap: 2rem;
+  flex-wrap: wrap;
+  ${at(500, `gap:1rem; `)}
   span {
     color: white;
     letter-spacing: 1.2px;
@@ -98,6 +100,7 @@ const SponsorItem = styled.a`
     width: 10.2rem;
     border-radius: 5px;
     object-fit: cover;
+    ${at(500, `height:2.6rem;width:8rem;`)}
   }
   span {
     color: white;
@@ -126,9 +129,9 @@ const Line = styled.div`
     text-align: center;
     text-transform: capitalize;
     color: white;
-    ${at(800, `font-size: 2.8rem; `)}
-    ${at(600, `font-size: 2.4rem;`)}
-  ${at(500, `font-size: 2rem; `)}
+    ${at(800, `font-size: 2rem; `)}
+    ${at(600, `font-size: 1.8rem;`)}
+    ${at(400, `font-size: 1.6rem;`)}
   }
 `;
 

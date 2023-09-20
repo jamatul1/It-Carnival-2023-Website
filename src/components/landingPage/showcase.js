@@ -61,16 +61,21 @@ const Subtitle = styled(motion.h4)`
   line-height: 1.2;
   color: #f4f4f4;
   top: 35%;
+  gap: 10px;
   ${at(825, `top: 30%; font-size: 1.8rem;`)}
-  ${at(572, `top: 23%; font-size: 1.6rem;`)}
- 
+  ${at(572, `top: 28%; font-size: 1.6rem; `)}
+  ${at(462, `top: 26%; font-size: 1.6rem; gap:0;`)}
+  ${at(450, `top: 25%; font-size: 1.6rem;`)}
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
   left: 50%;
   transform: translate(-50%, -50%);
   .bold {
     font-weight: bold;
     color: ${(p) => p.theme.wc};
   }
-  span {
+  .yellow {
     color: ${(p) => p.theme.pc};
   }
 `;
@@ -89,9 +94,10 @@ const SponsorsWrapper = styled.div`
   position: absolute;
   top: 50%;
   ${fCenter()}
-  gap:2rem;
+  gap:1rem;
   flex-direction: column;
-  ${at(825, `top: 60%;`)}
+  ${at(825, `top: 50%;`)}
+  ${at(478, `top: 58%;`)}
   width: 100%;
 `;
 const STitle = styled(motion.h5)`
@@ -111,7 +117,7 @@ const Sponsor = styled.div`
     width: 12.2rem;
     object-fit: cover;
     border-radius: 5px;
-    ${at(600, `height:3.6rem;width:3.6rem;`)}
+    ${at(600, `height:3.2rem;width:9rem;`)}
   }
 `;
 export default function Showcase() {
@@ -130,8 +136,9 @@ export default function Showcase() {
             ease: "easeIn",
           }}
         >
-          Welcome to the <span className="bold">PSTU CSE CLUB</span>{" "}
-          <span>Presents</span>{" "}
+          <span> Welcome to the</span>{" "}
+          <span className="bold">PSTU CSE CLUB</span>{" "}
+          <span className="yellow">Presents</span>{" "}
         </Subtitle>
         <ParticleText />
         <SponsorsWrapper>
