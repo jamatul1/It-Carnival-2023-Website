@@ -136,12 +136,6 @@ export default function EventTemplate({ data: { markdownRemark } }) {
     })();
   }, []);
   const { frontmatter, html } = markdownRemark;
-  let coverImg = getImage(
-    markdownRemark.frontmatter.coverImg?.childImageSharp?.gatsbyImageData
-  );
-  let prizeImg = getImage(
-    markdownRemark.frontmatter.prizeImg?.childImageSharp?.gatsbyImageData
-  );
   let { deadline, fee, formLink, prizePool, rules, schedules, title } =
     frontmatter;
 

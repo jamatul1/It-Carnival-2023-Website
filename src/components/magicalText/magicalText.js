@@ -47,7 +47,6 @@ function initMagicalText(stars) {
     reflow = star.offsetHeight;
     star.style.animation = "";
   };
-  console.log(stars);
   for (const star of stars) {
     setTimeout(() => {
       animate(star);

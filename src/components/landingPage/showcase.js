@@ -1,27 +1,12 @@
 import React from "react";
 import { styled } from "styled-components";
-import MagicalText from "../magicalText/magicalText";
-import FireWorks from "../firework/firework";
+
 import ParticleText from "../particleText/particleText";
 import { at, fCenter } from "../../utils/queryHelpers";
 import ScrollDownLogo from "../scrollDownLogo/scrollDownLogo";
 import { motion } from "framer-motion";
-import { Link } from "feather-icons-react/build/IconComponents";
-import VivasoftImg from "../../imgs/icons/herologo.png";
+
 import { sponsors } from "./sponsors/sponsors";
-const FireworkWrapper = styled.div`
-  position: absolute;
-  z-index: 10000;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
-const MagicalTextWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(100%, -50%);
-`;
 const Element = styled.div`
   position: relative;
   top: -50px;
@@ -123,9 +108,6 @@ const Sponsor = styled.div`
 export default function Showcase() {
   return (
     <Element>
-      {/* <FireworkWrapper>
-        <FireWorks />
-      </FireworkWrapper> */}
       <ParticlesWrapper>
         <Subtitle
           initial={{ opacity: 0 }}

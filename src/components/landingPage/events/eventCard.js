@@ -3,12 +3,9 @@ import * as styles from "./style.module.css";
 import { motion } from "framer-motion";
 import { textRevealVariant } from "../../animation/textReveal";
 import { useInView } from "react-intersection-observer";
-import ObjectReveal from "../../animation/objectReveal";
-import cardImg from "../../../imgs/calm mind.png";
 import { Link } from "gatsby";
 const EventCard = React.forwardRef((props, ref) => {
   const { ref: contentRef, inView } = useInView({ threshold: 1 });
-  console.log(props);
   return (
     <Link to={props.link}>
       <div ref={ref} className={styles.card}>

@@ -1,7 +1,7 @@
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import React from "react";
 import { styled } from "styled-components";
-import clubImg from "../../imgs/icons/logo.jpg";
+import clubImg from "../../imgs/icons/logo_w.png";
 import developerImg from "../../imgs/me.png";
 import developer1Img from "../../imgs/tahsin.jpg";
 import { at, fCenter } from "../../utils/queryHelpers";
@@ -29,6 +29,10 @@ const ClubItem = styled.div`
   text-align: center;
   ${fCenter()}
   flex-direction:column;
+  background: white;
+  color: black;
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
   img {
     width: 10rem;
     margin-bottom: 10px;
